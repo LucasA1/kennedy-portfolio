@@ -10,6 +10,15 @@ const buttonRecipe = defineRecipe({
           bg: "brand.600",
         },
       },
+      outline: {
+        bg: "transparent",
+        color: "white",
+        borderWidth: "2px",
+        borderColor: "white",
+        _hover: {
+          bg: "whiteAlpha.200",
+        },
+      },
     },
   },
 })
@@ -41,11 +50,23 @@ const config = defineConfig({
                 700: {value: '#334155'},
                 800: {value: '#1e293b'},
                 900: {value: '#111827'}
+                },
+                coral: {
+                50: {value: '#fff1ec'},
+                100: {value: '#ffd6c7'},
+                200: {value: '#ffb8a3'},
+                300: {value: '#ff9a7f'},
+                400: {value: '#ff8a6b'},
+                500: {value: '#ff7a59'},
+                600: {value: '#e35f42'},
+                700: {value: '#b84a34'},
+                800: {value: '#8c3627'},
+                900: {value: '#5f2419'}
                 }
             },
             fonts: {
-                body: {value: 'Inter, system-ui, sans-serif'},
-                heading: {value: 'Inter, system-ui, sans-serif'}
+                body: {value: 'Poppins, system-ui, sans-serif'},
+                heading: {value: 'Poppins, system-ui, sans-serif'}
             }
         },
         recipes: {

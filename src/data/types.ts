@@ -1,53 +1,122 @@
+import type { IconType } from 'react-icons'
+
+export interface NavLink {
+  label: string
+  to: string
+}
+
+export interface ContactInfo {
+  email: string
+  handle: string
+  phone: string
+  resumeUrl: string
+  portfolioPdfUrl: string
+}
+
+export interface SiteConfig {
+  siteName: string
+  tagline: string
+  navLinks: NavLink[]
+  contact: ContactInfo
+}
+
+export interface HeroCta {
+  label: string
+  to: string
+}
+
+export interface HeroContent {
+  eyebrow: string
+  title: string
+  paragraphs?: string[]
+  ctas?: HeroCta[]
+}
+
+export interface SkillCardData {
+  icon: IconType
+  title: string
+  description: string
+}
+
+export interface AboutMetaItem {
+  icon: IconType
+  label: string
+  sublabel?: string
+}
+
+export interface HomeContent {
+  hero: HeroContent
+  skills: {
+    eyebrow: string
+    heading: string
+    bullets: string[]
+    cards: SkillCardData[]
+  }
+  about: {
+    eyebrow: string
+    heading: string
+    meta: AboutMetaItem[]
+    paragraphs: string[]
+  }
+  portfolioPreview: {
+    eyebrow: string
+    heading: string
+  }
+}
+
+export interface CategorySummary {
+  slug: string
+  name: string
+  thumbnailSrc: string
+  thumbnailAlt: string
+}
+
+export interface ProjectImage {
+  src: string
+  alt: string
+  aspectRatio?: number
+}
+
 export interface Project {
   id: string
+  categorySlug: string
   title: string
-  category: string
-  thumbnail: string
-  summary: string
-  fullDescription: string
-  images: string[]
-  tags: string[]
+  subtitle?: string
+  paragraphs: string[]
+  bulletList?: string[]
+  statCallout?: string
+  images: ProjectImage[]
+  gallery?: ProjectImage[]
+  /** Internal only, never rendered — flags PDF copy known to be reused/placeholder text. */
+  contentNotice?: string
 }
 
 export interface EducationItem {
   institution: string
   degree: string
   years: string
-  location: string
+  honors?: string
 }
 
 export interface WorkHistoryItem {
   company: string
   role: string
   dates: string
-  location: string
   highlights: string[]
 }
 
-export interface ProfileData {
-  bio: string
-  skills: string[]
-  software: string[]
+export interface ResumeData {
+  name: string
+  title: string
+  contact: {
+    phone: string
+    email: string
+    website: string
+  }
   education: EducationItem[]
   workHistory: WorkHistoryItem[]
-}
-
-export interface NavLink {
-  label: string
-  href: string
-}
-
-export interface SocialHandle {
-  platform: string
-  url: string
-}
-
-export interface SiteConfig {
-  navLinks: NavLink[]
-  socialLinks: SocialHandle[]
-  contact: {
-    email: string
-    phone: string
-    resumeUrl: string
-  }
+  skillsColumnA: string[]
+  skillsColumnB: string[]
+  technicalColumnA: string[]
+  technicalColumnB: string[]
 }
