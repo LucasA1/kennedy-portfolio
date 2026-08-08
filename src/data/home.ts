@@ -11,8 +11,8 @@ export const homeContent: HomeContent = {
       "I've worked with organizations ranging from small businesses to Fortune 500 enterprises, helping to create work that is both visually compelling and strategically effective.",
     ],
     ctas: [
-      { label: 'My Work', to: '/portfolio' },
-      { label: "Let's Chat", to: '/contact' },
+      { label: 'MY WORK', to: '/portfolio' },
+      { label: "LET'S CHAT", to: '/contact' },
     ],
   },
   skills: {

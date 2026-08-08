@@ -25,10 +25,10 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <Box as="section" position="relative" bg={bg} overflow="hidden" minHeight={minHeight}>
-      {showStripeCorner && <StripeCorner corner="top-left" colorA="blackAlpha.400" colorB="transparent" />}
+      {showStripeCorner && <StripeCorner corner="top-left" colorA="coral.400" colorB="transparent" />}
       {showBlob && (
         <BlobShape
-          fill="whiteAlpha.200"
+          fill="brand.300"
           size="420px"
           top="-120px"
           right="-140px"
@@ -46,18 +46,20 @@ export default function PageHero({
         paddingTop={{ base: 8, md: 12 }}
         paddingBottom={{ base: 10, md: 16 }}
       >
+        <Heading as="h1" color="white" fontSize={{ base: '3xl', md: '5xl' }}>
+          {title}
+        </Heading>
         <Text
           color="whiteAlpha.900"
           fontWeight="semibold"
           fontSize="sm"
           letterSpacing="wide"
           textTransform="uppercase"
+          paddingTop={4}
+          paddingBottom={2}
         >
           {eyebrow}
         </Text>
-        <Heading as="h1" color="white" fontSize={{ base: '3xl', md: '5xl' }}>
-          {title}
-        </Heading>
         {children}
       </VStack>
     </Box>

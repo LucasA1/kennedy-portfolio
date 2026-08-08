@@ -1,14 +1,11 @@
-import { Box, Flex, HStack, Text } from '@chakra-ui/react'
+import { Box, Flex, HStack} from '@chakra-ui/react'
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import { siteConfig } from '../../data'
 
 export default function Header() {
   return (
     <Box as="header" position="relative" zIndex={2} paddingY={4} paddingX={{ base: 4, md: 8 }}>
-      <Flex align="center" justify="space-between" maxWidth="1200px" marginX="auto">
-        <Text fontWeight="bold" color="white" fontSize="lg">
-          {siteConfig.siteName}
-        </Text>
+      <Flex align="center" justify="center" maxWidth="1200px" marginX="auto">
         <HStack gap={{ base: 4, md: 8 }} as="nav">
           {siteConfig.navLinks.map((link) => (
             <Box

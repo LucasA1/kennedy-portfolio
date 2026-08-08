@@ -12,7 +12,12 @@ export default function Home() {
 
   return (
     <>
-      <PageHero bg="brand.800" eyebrow={hero.eyebrow} title={hero.title} showStripeCorner minHeight="480px">
+      <PageHero 
+        bg="brand.600" 
+        eyebrow={hero.eyebrow} 
+        title={hero.title} 
+        showStripeCorner 
+        minHeight="480px">
         <VStack align="start" gap={4} maxWidth="560px">
           {hero.paragraphs?.map((paragraph) => (
             <Text key={paragraph} color="whiteAlpha.900">
@@ -27,7 +32,7 @@ export default function Home() {
                   asChild
                   variant={index === 0 ? 'solid' : 'outline'}
                   bg={index === 0 ? 'white' : undefined}
-                  color={index === 0 ? 'brand.700' : undefined}
+                  color={index === 0 ? 'brand.700' : 'white'}
                   _hover={index === 0 ? { bg: 'whiteAlpha.900' } : undefined}
                   borderRadius="full"
                   paddingX={6}
@@ -41,29 +46,26 @@ export default function Home() {
       </PageHero>
 
       <Box as="section" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
-        <VStack maxWidth="1200px" marginX="auto" align="start" gap={8}>
-          <Box>
-            <Text color="brand.500" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
-              {skills.eyebrow}
-            </Text>
-            <Heading as="h2" size="xl" color="brand.700">
-              {skills.heading}
-            </Heading>
-          </Box>
-
-          <SimpleGrid columns={{ base: 1, md: 2 }} gap={12} width="100%">
-            <List.Root color="slate.600" paddingLeft={4}>
+        <HStack gap={4}>
+          <VStack maxW="1200px" marginX="auto" align="start" gap={8}>
+            <Box>
+              <Text color="brand.300" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
+                {skills.eyebrow}
+              </Text>
+              <Heading as="h2" size="2xl" fontWeight="bold" letterSpacing="tight" color="brand.700">
+                {skills.heading}
+              </Heading>
+            </Box>
+            <List.Root color="black" paddingLeft={4} minW="300px">
               {skills.bullets.map((bullet) => (
-                <List.Item key={bullet}>{bullet}</List.Item>
+                 <List.Item key={bullet}>{bullet}</List.Item>
               ))}
-            </List.Root>
-            <SimpleGrid columns={{ base: 1, sm: 2 }} gap={4}>
-              {skills.cards.map((card) => (
-                <SkillCard key={card.title} {...card} />
-              ))}
-            </SimpleGrid>
-          </SimpleGrid>
-        </VStack>
+            </List.Root>          
+          </VStack>
+          {skills.cards.map((card) => (
+            <SkillCard key={card.title} {...card} />
+          ))}
+        </HStack>
       </Box>
 
       <Box as="section" bg="coral.100" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
