@@ -33,7 +33,7 @@ export default function Home() {
                   variant={index === 0 ? 'solid' : 'outline'}
                   bg={index === 0 ? 'white' : undefined}
                   color={index === 0 ? 'brand.700' : 'white'}
-                  _hover={index === 0 ? { bg: 'whiteAlpha.900' } : undefined}
+                  _hover={index === 0 ? { bg: 'whiteAlpha.900'} : {color: 'slate.700' }}
                   borderRadius="full"
                   paddingX={6}
                 >
@@ -46,21 +46,28 @@ export default function Home() {
       </PageHero>
 
       <Box as="section" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
-        <HStack gap={4}>
-          <VStack maxW="1200px" marginX="auto" align="start" gap={8}>
+        <HStack align="center" justify="center" gap={6}>
+          <VStack maxW="260px" align="start" flexShrink={0}>
             <Box>
               <Text color="brand.300" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
                 {skills.eyebrow}
               </Text>
-              <Heading as="h2" size="2xl" fontWeight="bold" letterSpacing="tight" color="brand.700">
+              <Heading
+                as="h2"
+                size="2xl"
+                fontWeight="bold"
+                letterSpacing="tight"
+                color="brand.700"
+                paddingBottom={4}
+              >
                 {skills.heading}
               </Heading>
+              <List.Root color="black" paddingLeft={4}>
+                {skills.bullets.map((bullet) => (
+                  <List.Item key={bullet}>{bullet}</List.Item>
+                ))}
+              </List.Root>
             </Box>
-            <List.Root color="black" paddingLeft={4} minW="300px">
-              {skills.bullets.map((bullet) => (
-                 <List.Item key={bullet}>{bullet}</List.Item>
-              ))}
-            </List.Root>          
           </VStack>
           {skills.cards.map((card) => (
             <SkillCard key={card.title} {...card} />
@@ -87,7 +94,7 @@ export default function Home() {
             <Text color="brand.600" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
               {about.eyebrow}
             </Text>
-            <Heading as="h2" size="xl" color="brand.700">
+            <Heading as="h2" size="2xl" fontWeight="bold" color="brand.700" letterSpacing="tight">
               {about.heading}
             </Heading>
             <HStack gap={6} flexWrap="wrap">
@@ -106,7 +113,7 @@ export default function Home() {
               ))}
             </HStack>
             {about.paragraphs.map((paragraph) => (
-              <Text key={paragraph} color="slate.600">
+              <Text key={paragraph} color="slate.900">
                 {paragraph}
               </Text>
             ))}
@@ -120,7 +127,7 @@ export default function Home() {
             <Text color="brand.500" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
               {portfolioPreview.eyebrow}
             </Text>
-            <Heading as="h2" size="xl" color="brand.700">
+            <Heading as="h2" size="2xl" fontWeight="bold" color="brand.700" letterSpacing="tight">
               {portfolioPreview.heading}
             </Heading>
           </Box>

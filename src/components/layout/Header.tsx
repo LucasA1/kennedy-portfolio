@@ -18,7 +18,23 @@ export default function Header() {
               textTransform="uppercase"
               opacity={0.85}
               _hover={{ opacity: 1 }}
-              css={{ '&.active': { opacity: 1, textDecoration: 'underline' } }}
+              css={{
+                display: 'inline-block',
+                position: 'relative',
+                '&.active': { opacity: 1 },
+                '&.active::after': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  right: 0,
+                  bottom: '-6px',
+                  height: '6px',
+                  backgroundImage:
+                    'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'6\' viewBox=\'0 0 12 6\'%3E%3Cpath d=\'M0,3 Q3,0 6,3 T12,3\' fill=\'none\' stroke=\'%23ff9a7f\' stroke-width=\'1.5\' stroke-linecap=\'round\'/%3E%3C/svg%3E")',
+                  backgroundRepeat: 'repeat-x',
+                  backgroundSize: '12px 6px',
+                },
+              }}
             >
               <RouterNavLink to={link.to} end={link.to === '/'}>
                 {link.label}

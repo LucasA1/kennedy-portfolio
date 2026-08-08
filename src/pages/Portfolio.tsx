@@ -14,7 +14,7 @@ export default function Portfolio() {
             <Text color="brand.500" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
               Projects
             </Text>
-            <Heading as="h2" size="xl" color="brand.700">
+            <Heading as="h2" size="2xl" fontWeight="bold" letterSpacing="tight" color="brand.700">
               Areas of Expertise
             </Heading>
           </Box>

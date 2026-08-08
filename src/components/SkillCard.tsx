@@ -4,16 +4,16 @@ import type { SkillCardData } from '../data/types'
 export default function SkillCard({ icon: Icon, title, description }: SkillCardData) {
   return (
     <VStack
-      gap={3}
       bg="white"
       borderRadius="sm"
       boxShadow="lg"
-      padding={6}
-      height="100%"
-      minWidth="200px"
-      maxHeight="200px"
+      padding={5}
+      gap={2}
+      width="200px"
+      height="200px"
+      flexShrink={0}
     >
-      <Box color="brand.700" fontSize="2xl">
+      <Box color="brand.700" fontSize="3xl">
         <Icon aria-hidden="true" />
       </Box>
       <Text fontWeight="bold" color="brand.300" letterSpacing="tight" fontSize="lg">
