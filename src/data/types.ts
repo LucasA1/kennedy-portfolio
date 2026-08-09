@@ -25,11 +25,17 @@ export interface HeroCta {
   to: string
 }
 
+export interface ContentImage {
+  src: string
+  alt: string
+}
+
 export interface HeroContent {
   eyebrow: string
   title: string
   paragraphs?: string[]
   ctas?: HeroCta[]
+  image?: ContentImage
 }
 
 export interface SkillCardData {
@@ -57,10 +63,13 @@ export interface HomeContent {
     heading: string
     meta: AboutMetaItem[]
     paragraphs: string[]
+    image: ContentImage
   }
   portfolioPreview: {
     eyebrow: string
     heading: string
+    /** Keyed by CategorySummary.slug — home-page-specific crops, distinct from each category's portfolio-page cover image. */
+    categoryImages: Record<string, ContentImage>
   }
 }
 

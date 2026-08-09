@@ -28,16 +28,16 @@ const config = defineConfig({
         tokens:{
             colors: {
                 brand: {
-                50: {value: '#ffe5f0'},
-                100: {value: '#ffb3d1'},
-                200: {value: '#ff80b3'},
-                300: {value: '#ff4d94'},
-                400: {value: '#ff1a75'},
-                500: {value: '#d81b60'},
-                600: {value: '#b21854'},
-                700: {value: '#871644'},
-                800: {value: '#5a102f'},
-                900: {value: '#2f081a'}
+                50: {value: '#ffeef6'},
+                100: {value: '#ffd2e4'},
+                200: {value: '#ffabc9'},
+                300: {value: '#ff82ac'},
+                400: {value: '#ff5c8c'},
+                500: {value: '#e83070'},
+                600: {value: '#c4165a'},
+                700: {value: '#aa0247'},
+                800: {value: '#7a0334'},
+                900: {value: '#4a0220'}
                 },
                 slate: {
                 50: {value: '#f8fafc'},
@@ -49,19 +49,19 @@ const config = defineConfig({
                 600: {value: '#475569'},
                 700: {value: '#334155'},
                 800: {value: '#1e293b'},
-                900: {value: '#111827'}
+                900: {value: '#2b2b2b'}
                 },
                 coral: {
-                50: {value: '#fff1ec'},
-                100: {value: '#ffd6c7'},
-                200: {value: '#ffb8a3'},
-                300: {value: '#ff9a7f'},
-                400: {value: '#ff8a6b'},
-                500: {value: '#ff7a59'},
-                600: {value: '#e35f42'},
-                700: {value: '#b84a34'},
-                800: {value: '#8c3627'},
-                900: {value: '#5f2419'}
+                50: {value: '#fff5f3'},
+                100: {value: '#ffd4d4'},
+                200: {value: '#ffbdb7'},
+                300: {value: '#fea99f'},
+                400: {value: '#fc847e'},
+                500: {value: '#f2695f'},
+                600: {value: '#d1503f'},
+                700: {value: '#a83c2e'},
+                800: {value: '#7c2b21'},
+                900: {value: '#501c16'}
                 }
             },
             fonts: {

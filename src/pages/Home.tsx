@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Heading, List, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, Flex, HStack, Heading, List, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 import PageHero from '../components/layout/PageHero'
 import BlobShape from '../components/decorative/BlobShape'
@@ -12,11 +12,11 @@ export default function Home() {
 
   return (
     <>
-      <PageHero 
-        bg="brand.600" 
-        eyebrow={hero.eyebrow} 
-        title={hero.title} 
-        showStripeCorner 
+      <PageHero
+        bg="brand.600"
+        eyebrow={hero.eyebrow}
+        title={hero.title}
+        image={hero.image}
         minHeight="480px">
         <VStack align="start" gap={4} maxWidth="560px">
           {hero.paragraphs?.map((paragraph) => (
@@ -75,36 +75,62 @@ export default function Home() {
         </HStack>
       </Box>
 
-      <Box as="section" bg="coral.100" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
+      <Box as="section" bg="coral.100" paddingTop={{ base: 8, md: 12 }} paddingX={{ base: 4, md: 8 }}>
         <SimpleGrid
-          columns={{ base: 1, md: 2 }}
-          gap={{ base: 8, md: 12 }}
+          columns={2}
+          gap={8}
           maxWidth="1200px"
           marginX="auto"
-          alignItems="center"
+          alignItems="stretch"
         >
-          <Box position="relative">
-            <BlobShape fill="coral.300" size="115%" top="-8%" left="-8%" />
-            <Box position="relative" zIndex={1} maxWidth="360px">
-              <PlaceholderImage src="/images/home/about-photo.jpg" alt="Portrait of Kennedy Papian" aspectRatio={3 / 4} borderRadius="lg" />
+          <Box
+            position="relative"
+            overflow="hidden"
+            width="100%"
+            height="100%"
+          >
+            <Box position="absolute" top={0} left={0} width="200%" height="115%">
+              <BlobShape
+                fill="coral.400"
+                size="100%"
+                top="5%"
+                left="-30%"
+                shape="blob-4"
+              />
+            </Box>
+            <BlobShape
+              fill="white"
+              size="55%"
+              top="8%"
+              right="4%"
+              shape="blob-5"
+              pattern="dots"
+            />
+            <Box width="60%">
+                <PlaceholderImage 
+                  src={about.image.src} 
+                  alt={about.image.alt} 
+                  aspectRatio={3 / 4} 
+                  borderRadius="lg" 
+                />
             </Box>
           </Box>
 
-          <VStack align="start" gap={4}>
-            <Text color="brand.600" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
+          <VStack align="start">
+            <Text color="slate.900" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="tight" paddingBottom={0}>
               {about.eyebrow}
             </Text>
-            <Heading as="h2" size="2xl" fontWeight="bold" color="brand.700" letterSpacing="tight">
+            <Heading as="h2" size="2xl" fontWeight="bold" color="brand.600" letterSpacing="tight" paddingTop={0}>
               {about.heading}
             </Heading>
             <HStack gap={6} flexWrap="wrap">
               {about.meta.map((item) => (
-                <HStack key={item.label} gap={2} color="slate.700">
+                <HStack key={item.label} gap={2} color="coral.400" >
                   <item.icon aria-hidden="true" />
                   <Box>
-                    <Text fontWeight="medium">{item.label}</Text>
+                    <Text fontWeight="medium" color="slate.700">{item.label}</Text>
                     {item.sublabel && (
-                      <Text fontSize="xs" color="slate.500">
+                      <Text fontSize="xs" fontStyle="italic" color="slate.700">
                         {item.sublabel}
                       </Text>
                     )}
@@ -131,9 +157,13 @@ export default function Home() {
               {portfolioPreview.heading}
             </Heading>
           </Box>
-          <SimpleGrid columns={{ base: 2, md: 4 }} gap={4} width="100%">
+          <SimpleGrid columns={{ base: 2, md: 4 }} gap={1} width="100%">
             {categories.map((category) => (
-              <CategoryTile key={category.slug} category={category} />
+              <CategoryTile
+                key={category.slug}
+                category={category}
+                image={portfolioPreview.categoryImages[category.slug]}
+              />
             ))}
           </SimpleGrid>
         </VStack>

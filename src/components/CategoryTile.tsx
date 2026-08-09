@@ -1,28 +1,37 @@
 import { Box, Text } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
-import type { CategorySummary } from '../data/types'
+import type { CategorySummary, ContentImage } from '../data/types'
 import PlaceholderImage from './decorative/PlaceholderImage'
 
 interface CategoryTileProps {
   category: CategorySummary
+  /** Overrides the category's default cover image, e.g. a crop tailored to the home page. */
+  image?: ContentImage
 }
 
-export default function CategoryTile({ category }: CategoryTileProps) {
+export default function CategoryTile({ category, image }: CategoryTileProps) {
+  const thumbnailSrc = image?.src ?? category.thumbnailSrc
+  const thumbnailAlt = image?.alt ?? category.thumbnailAlt
+  const [firstWord, ...restWords] = category.name.split(' ')
+  const twoLineName = `${firstWord}\n${restWords.join(' ')}`
+
   return (
     <Box
       asChild
       position="relative"
       display="block"
-      borderRadius="md"
+      borderRadius="2xl"
       overflow="hidden"
       role="group"
+      width="250px"
+      height="250px"
       _hover={{ transform: 'scale(1.02)' }}
       transition="transform 0.15s ease"
     >
       <RouterLink to={`/portfolio/${category.slug}`}>
         <PlaceholderImage
-          src={category.thumbnailSrc}
-          alt={category.thumbnailAlt}
+          src={thumbnailSrc}
+          alt={thumbnailAlt}
           aspectRatio={4 / 3}
           borderRadius="md"
           showLabel={false}
@@ -38,16 +47,19 @@ export default function CategoryTile({ category }: CategoryTileProps) {
         />
         <Text
           position="absolute"
-          bottom={3}
-          left={3}
-          right={3}
+          bottom={4}
+          left={0}
+          right={0}
+          textAlign="center"
+          whiteSpace="pre-line"
+          lineHeight="short"
           color="white"
           fontWeight="bold"
-          fontSize="sm"
+          fontSize="lg"
           textTransform="uppercase"
-          letterSpacing="wide"
+          letterSpacing="tight"
         >
-          {category.name}
+          {twoLineName}
         </Text>
       </RouterLink>
     </Box>
