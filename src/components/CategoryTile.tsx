@@ -5,7 +5,6 @@ import PlaceholderImage from './decorative/PlaceholderImage'
 
 interface CategoryTileProps {
   category: CategorySummary
-  /** Overrides the category's default cover image, e.g. a crop tailored to the home page. */
   image?: ContentImage
 }
 

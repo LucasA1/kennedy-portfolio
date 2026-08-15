@@ -1,4 +1,4 @@
-import { Box, Flex, Text, VStack, useToken } from '@chakra-ui/react'
+import { Box, Grid, Text, VStack, useToken } from '@chakra-ui/react'
 import { siteConfig } from '../../data'
 import ContactList from '../ContactList'
 
@@ -27,28 +27,27 @@ export default function Footer() {
         inset={0}
         display="flex"
         alignItems="flex-end"
-        paddingBottom={{ base: 6, md: 10 }}
+        paddingBottom={16}
         paddingX={{ base: 4, md: 8 }}
       >
-        <Flex
+        <Grid
           width="100%"
           maxWidth="1200px"
           marginX="auto"
-          direction={{ base: 'column', md: 'row' }}
-          align={{ base: 'start', md: 'center' }}
-          justify="space-between"
-          gap={6}
+          templateColumns={{ base: '1fr', md: 'repeat(2, max-content)' }}
+          alignItems={{ base: 'start', md: 'center' }}
+          gap={8}
         >
-          <VStack align="start" gap={0}>
-            <Text fontWeight="bold" fontSize="lg" color="brand.700">
+          <VStack align="start">
+            <Text fontWeight="bold" fontSize="2xl" color="brand.700">
               {siteConfig.siteName}
             </Text>
-            <Text fontWeight="medium" color="brand.700">
+            <Text fontWeight="bold" color="slate.900">
               {siteConfig.tagline}
             </Text>
           </VStack>
           <ContactList color="brand.700" includePhone={false} />
-        </Flex>
+        </Grid>
       </Box>
     </Box>
   )

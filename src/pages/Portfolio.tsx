@@ -6,7 +6,7 @@ import { categories, siteConfig } from '../data'
 export default function Portfolio() {
   return (
     <>
-      <PageHero bg="brand.500" eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
+      <PageHero bg="brand.400" eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
 
       <Box as="section" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
         <VStack maxWidth="1200px" marginX="auto" align="center" gap={8}>

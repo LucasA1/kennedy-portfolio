@@ -6,14 +6,14 @@ export default function Header() {
   return (
     <Box as="header" position="relative" zIndex={2} paddingY={4} paddingX={{ base: 4, md: 8 }}>
       <Flex align="center" justify="center" maxWidth="1200px" marginX="auto">
-        <HStack gap={{ base: 4, md: 8 }} as="nav">
+        <HStack paddingTop={6} gap={{ base: 4, md: 8 }} as="nav">
           {siteConfig.navLinks.map((link) => (
             <Box
               key={link.to}
               asChild
               color="white"
               fontWeight="medium"
-              fontSize="sm"
+              fontSize="lg"
               letterSpacing="wide"
               textTransform="uppercase"
               opacity={0.85}

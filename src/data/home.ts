@@ -1,5 +1,12 @@
-import { MdAutoAwesome, MdDesignServices, } from 'react-icons/md'
-import { FaMapMarkerAlt, FaGraduationCap , FaUser, FaPaintBrush, FaNewspaper } from 'react-icons/fa'
+import {
+  FaMapMarkerAlt,
+  FaGraduationCap,
+  FaUser,
+  FaPaintBrush,
+  FaNewspaper,
+  FaPencilRuler,
+  FaMagic,
+} from 'react-icons/fa'
 import type { HomeContent } from './types'
 
 export const homeContent: HomeContent = {
@@ -38,13 +45,13 @@ export const homeContent: HomeContent = {
           'With a Bachelor of Fine Arts (B.F.A.) in Graphic Design, I bring a strong foundation in design principles that guide every project I create.',
       },
       {
-        icon: MdDesignServices,
+        icon: FaPencilRuler,
         title: 'UI/UX design',
         description:
           'Great design goes beyond aesthetics. I focus on creating user experiences that feel intuitive, accessible, and purposeful.',
       },
       {
-        icon: MdAutoAwesome,
+        icon: FaMagic,
         title: 'AI Integration',
         description:
           'I balance the speed of AI with the critical thinking, empathy, and design expertise needed to create meaningful visual communications.',

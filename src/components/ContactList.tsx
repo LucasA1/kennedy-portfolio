@@ -1,5 +1,5 @@
 import { HStack, Link, Text, VStack } from '@chakra-ui/react'
-import { MdAlternateEmail, MdEmail, MdPhone } from 'react-icons/md'
+import { FaRegEnvelope, FaAt, FaPhone } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 import { siteConfig } from '../data'
 
@@ -18,22 +18,22 @@ export default function ContactList({ color = 'inherit', includePhone = true }: 
   const { contact } = siteConfig
 
   const rows: ContactRow[] = [
-    { icon: MdEmail, label: contact.email, href: `mailto:${contact.email}` },
-    { icon: MdAlternateEmail, label: contact.handle },
-    ...(includePhone ? [{ icon: MdPhone, label: contact.phone, href: `tel:${contact.phone}` }] : []),
+    { icon: FaRegEnvelope, label: contact.email, href: `mailto:${contact.email}` },
+    { icon: FaAt, label: contact.handle },
+    ...(includePhone ? [{ icon: FaPhone, label: contact.phone, href: `tel:${contact.phone}` }] : []),
   ]
 
   return (
-    <VStack align="start" gap={2}>
+    <VStack align="start">
       {rows.map((row) => (
         <HStack key={row.label} gap={2} color={color}>
           <row.icon aria-hidden="true" />
           {row.href ? (
-            <Link href={row.href} color={color} _hover={{ textDecoration: 'underline' }}>
+            <Link href={row.href} color="slate.800" _hover={{ textDecoration: 'underline' }}>
               {row.label}
             </Link>
           ) : (
-            <Text color={color}>{row.label}</Text>
+            <Text color="slate.800">{row.label}</Text>
           )}
         </HStack>
       ))}

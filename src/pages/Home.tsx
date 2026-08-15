@@ -1,7 +1,6 @@
-import { Box, Button, Flex, HStack, Heading, List, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, HStack, Heading, Image, List, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 import PageHero from '../components/layout/PageHero'
-import BlobShape from '../components/decorative/BlobShape'
 import PlaceholderImage from '../components/decorative/PlaceholderImage'
 import SkillCard from '../components/SkillCard'
 import CategoryTile from '../components/CategoryTile'
@@ -13,11 +12,12 @@ export default function Home() {
   return (
     <>
       <PageHero
-        bg="brand.600"
+        bg="brand.700"
         eyebrow={hero.eyebrow}
         title={hero.title}
         image={hero.image}
-        minHeight="480px">
+        minHeight="480px"
+      >
         <VStack align="start" gap={4} maxWidth="560px">
           {hero.paragraphs?.map((paragraph) => (
             <Text key={paragraph} color="whiteAlpha.900">
@@ -45,7 +45,11 @@ export default function Home() {
         </VStack>
       </PageHero>
 
-      <Box as="section" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
+      <Box 
+        as="section" 
+        paddingY={16} 
+        paddingX={8}
+      >
         <HStack align="center" justify="center" gap={6}>
           <VStack maxW="260px" align="start" flexShrink={0}>
             <Box>
@@ -75,7 +79,12 @@ export default function Home() {
         </HStack>
       </Box>
 
-      <Box as="section" bg="coral.100" paddingTop={{ base: 8, md: 12 }} paddingX={{ base: 4, md: 8 }}>
+      <Box 
+        as="section" 
+        bg="coral.100" 
+        paddingTop={12} 
+        paddingX={8}
+      >
         <SimpleGrid
           columns={2}
           gap={8}
@@ -89,30 +98,24 @@ export default function Home() {
             width="100%"
             height="100%"
           >
-            <Box position="absolute" top={0} left={0} width="200%" height="115%">
-              <BlobShape
-                fill="coral.400"
-                size="100%"
-                top="5%"
-                left="-30%"
-                shape="blob-4"
-              />
-            </Box>
-            <BlobShape
-              fill="white"
-              size="55%"
-              top="8%"
-              right="4%"
-              shape="blob-5"
-              pattern="dots"
+            <Image
+              src="/images/home/about.svg"
+              alt=""
+              aria-hidden="true"
+              pointerEvents="none"
+              position="absolute"
+              bottom={0}
+              left={0}
+              width="100%"
+              zIndex={0}
             />
-            <Box width="60%">
-                <PlaceholderImage 
-                  src={about.image.src} 
-                  alt={about.image.alt} 
-                  aspectRatio={3 / 4} 
-                  borderRadius="lg" 
-                />
+            <Box width="60%" height="20%" position="relative" zIndex={1} left={20}>
+              <PlaceholderImage 
+                src={about.image.src} 
+                alt={about.image.alt}
+                aspectRatio={.74} 
+                borderRadius="lg" 
+              />
             </Box>
           </Box>
 
@@ -151,9 +154,9 @@ export default function Home() {
         as="section" 
         position="relative" 
         overflow="hidden" 
-        backgroundColor="slate.50"
-        paddingY={{ base: 12, md: 16 }} 
-        paddingX={{ base: 4, md: 8 }}
+        paddingY={16} 
+        paddingX={8}
+        paddingTop={10}
       >
         <Box
           position="absolute"
@@ -161,15 +164,23 @@ export default function Home() {
           backgroundImage="url(/images/home/home-portfolio.svg)"
           backgroundRepeat="no-repeat"
           backgroundPosition="center"
-          backgroundSize="75%"
+          backgroundSize="85%"
           zIndex={0}
         />
-        <VStack position="relative" zIndex={1} maxWidth="1200px" marginX="auto" align="center" gap={8}>
-          <Box textAlign="center">
-            <Text color="brand.500" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
+        <VStack 
+          position="relative" 
+          zIndex={1} 
+          maxWidth="1200px" 
+          marginX="auto" 
+          align="center" 
+          gap={8}
+          paddingBottom={12}
+        >
+          <Box textAlign="center" paddingBottom={8}>
+            <Text color="brand.400" fontWeight="bold" fontSize="lg" textTransform="uppercase" letterSpacing="tight">
               {portfolioPreview.eyebrow}
             </Text>
-            <Heading as="h2" size="2xl" fontWeight="bold" color="brand.700" letterSpacing="tight">
+            <Heading as="h2" size="4xl" fontWeight="bold" color="brand.700" letterSpacing="tight">
               {portfolioPreview.heading}
             </Heading>
           </Box>

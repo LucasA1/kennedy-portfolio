@@ -65,8 +65,8 @@ const config = defineConfig({
                 }
             },
             fonts: {
-                body: {value: 'Poppins, system-ui, sans-serif'},
-                heading: {value: 'Poppins, system-ui, sans-serif'}
+                body: {value: 'Roboto, system-ui, sans-serif'},
+                heading: {value: 'Roboto, system-ui, sans-serif'}
             }
         },
         recipes: {
