@@ -23,8 +23,7 @@ export default function CategoryTile({ category, image }: CategoryTileProps) {
       borderRadius="2xl"
       overflow="hidden"
       role="group"
-      width="250px"
-      height="250px"
+      width="100%"
       _hover={{ transform: 'scale(1.02)' }}
       transition="transform 0.15s ease"
     >
@@ -32,7 +31,7 @@ export default function CategoryTile({ category, image }: CategoryTileProps) {
         <PlaceholderImage
           src={thumbnailSrc}
           alt={thumbnailAlt}
-          aspectRatio={4 / 3}
+          aspectRatio={1}
           borderRadius="md"
           showLabel={false}
         />
@@ -40,9 +39,8 @@ export default function CategoryTile({ category, image }: CategoryTileProps) {
           position="absolute"
           inset={0}
           bgGradient="to-t"
-          gradientFrom="blackAlpha.700"
-          gradientTo="transparent"
-          gradientVia="transparent"
+          gradientFrom="blackAlpha.800"
+          gradientTo="blackAlpha.50"
           pointerEvents="none"
         />
         <Text
@@ -57,7 +55,6 @@ export default function CategoryTile({ category, image }: CategoryTileProps) {
           fontWeight="bold"
           fontSize="lg"
           textTransform="uppercase"
-          letterSpacing="tight"
         >
           {twoLineName}
         </Text>

@@ -147,8 +147,24 @@ export default function Home() {
         </SimpleGrid>
       </Box>
 
-      <Box as="section" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
-        <VStack maxWidth="1200px" marginX="auto" align="center" gap={8}>
+      <Box 
+        as="section" 
+        position="relative" 
+        overflow="hidden" 
+        backgroundColor="slate.50"
+        paddingY={{ base: 12, md: 16 }} 
+        paddingX={{ base: 4, md: 8 }}
+      >
+        <Box
+          position="absolute"
+          inset={0}
+          backgroundImage="url(/images/home/home-portfolio.svg)"
+          backgroundRepeat="no-repeat"
+          backgroundPosition="center"
+          backgroundSize="75%"
+          zIndex={0}
+        />
+        <VStack position="relative" zIndex={1} maxWidth="1200px" marginX="auto" align="center" gap={8}>
           <Box textAlign="center">
             <Text color="brand.500" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
               {portfolioPreview.eyebrow}
@@ -157,7 +173,7 @@ export default function Home() {
               {portfolioPreview.heading}
             </Heading>
           </Box>
-          <SimpleGrid columns={{ base: 2, md: 4 }} gap={1} width="100%">
+          <SimpleGrid columns={{ base: 2, md: 4 }} gap={3} width="100%">
             {categories.map((category) => (
               <CategoryTile
                 key={category.slug}

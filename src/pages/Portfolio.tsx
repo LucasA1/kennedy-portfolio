@@ -18,7 +18,7 @@ export default function Portfolio() {
               Areas of Expertise
             </Heading>
           </Box>
-          <SimpleGrid columns={{ base: 2, md: 4 }} gap={4} width="100%">
+          <SimpleGrid columns={{ base: 2, md: 4 }} rowGap={4} columnGap={4} width="100%">
             {categories.map((category) => (
               <CategoryTile key={category.slug} category={category} />
             ))}

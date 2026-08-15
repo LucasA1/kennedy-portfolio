@@ -82,8 +82,8 @@ export default function PageHero({
           {children}
         </VStack>
         {image && (
-          <Box flexShrink={0} width={{ base: '220px', md: '280px' }}>
-            <PlaceholderImage src={image.src} alt={image.alt} aspectRatio={1} borderRadius="full" showLabel={false} />
+          <Box position="relative">
+            <PlaceholderImage src={image.src} alt={image.alt} aspectRatio={1} showLabel={false} />
           </Box>
         )}
       </Flex>
