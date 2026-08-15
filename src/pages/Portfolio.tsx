@@ -1,12 +1,14 @@
-import { Box, Heading, Link, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Box, Heading, Link, SimpleGrid, Text, VStack, useToken } from '@chakra-ui/react'
 import PageHero from '../components/layout/PageHero'
 import CategoryTile from '../components/CategoryTile'
 import { categories, siteConfig } from '../data'
 
 export default function Portfolio() {
+  const [brand800] = useToken('colors', ['brand.800'])
+
   return (
     <>
-      <PageHero bg="brand.400" eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
+      <PageHero bg="brand.400" headerLineColor={brand800} eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
 
       <Box as="section" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
         <VStack maxWidth="1200px" marginX="auto" align="center" gap={8}>

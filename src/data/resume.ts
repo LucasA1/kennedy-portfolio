@@ -25,7 +25,7 @@ export const resume: ResumeData = {
         'Designed presentations, digital graphics, and internal communications that established enterprise brand standards and lifted email open and click-through rates by 18%+',
         'Translated complex IT, change management, and user experience concepts into clear visual communications, improving stakeholder understanding and adoption of new processes and technologies',
         'Supported two company brand refresh initiatives by developing visual assets and communication materials that ensured a consistent and cohesive brand experience and facilitated the transition away from legacy materials',
-        'Integrated AI-powered capabilities within Adobe Creative Cloud and Microsoft Copilot to streamline workflows and increase production efficiency, reclaiming 8 hours a week for higher-valued design work',
+        'Integrated AI-powered capabilities within Adobe Creative Cloud and Microsoft Copilot to streamline workflows and increase production efficiency, reclaiming 8 hours a week for higher-value design work',
         'Led the IT employee engagement committee by planning and coordinating employee focused events that supported team connection and morale',
       ],
     },

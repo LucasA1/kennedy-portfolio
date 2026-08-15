@@ -2,7 +2,9 @@ import { Box, Flex, HStack} from '@chakra-ui/react'
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import { siteConfig } from '../../data'
 
-export default function Header() {
+export default function Header({ lineColor = '#ff9a7f' }: { lineColor?: string }) {
+  const encodedLineColor = lineColor.replace('#', '%23')
+
   return (
     <Box as="header" position="relative" zIndex={2} paddingY={4} paddingX={{ base: 4, md: 8 }}>
       <Flex align="center" justify="center" maxWidth="1200px" marginX="auto">
@@ -29,8 +31,7 @@ export default function Header() {
                   right: 0,
                   bottom: '-6px',
                   height: '6px',
-                  backgroundImage:
-                    'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'6\' viewBox=\'0 0 12 6\'%3E%3Cpath d=\'M0,3 Q3,0 6,3 T12,3\' fill=\'none\' stroke=\'%23ff9a7f\' stroke-width=\'1.5\' stroke-linecap=\'round\'/%3E%3C/svg%3E")',
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' viewBox='0 0 12 6'%3E%3Cpath d='M0,3 Q3,0 6,3 T12,3' fill='none' stroke='${encodedLineColor}' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")`,
                   backgroundRepeat: 'repeat-x',
                   backgroundSize: '12px 6px',
                 },

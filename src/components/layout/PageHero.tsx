@@ -13,6 +13,7 @@ interface PageHeroProps {
   showBlob?: boolean
   minHeight?: string
   image?: ContentImage
+  headerLineColor?: string
 }
 
 export default function PageHero({
@@ -22,6 +23,7 @@ export default function PageHero({
   children,
   minHeight = '280px',
   image,
+  headerLineColor,
 }: PageHeroProps) {
   return (
     <Box as="section" position="relative" bg={bg} overflow="hidden" minHeight={minHeight}>
@@ -33,10 +35,10 @@ export default function PageHero({
         position="absolute"
         top={0}
         left={0}
-        width="50%"
+        width="25%"
         zIndex={0}
       />
-      <Header />
+      <Header lineColor={headerLineColor} />
       <Flex
         align="center"
         justify="space-between"

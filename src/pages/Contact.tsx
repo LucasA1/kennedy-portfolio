@@ -1,37 +1,43 @@
-import { Box, Heading, Link, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Box, Grid, Heading, Link, Text, VStack, useToken } from '@chakra-ui/react'
 import PageHero from '../components/layout/PageHero'
 import ContactList from '../components/ContactList'
-import ResumeCard from '../components/ResumeCard'
+import ResumePdfPreview from '../components/ResumePdfPreview'
 import { siteConfig } from '../data'
 
 export default function Contact() {
+  const [brand700] = useToken('colors', ['brand.700'])
   return (
     <>
-      <PageHero bg="coral.500" eyebrow="Additional Information" title="Contact" showBlob minHeight="240px" />
+      <PageHero bg="coral.400"  headerLineColor={brand700}  eyebrow="Additional Information" title="Contact" minHeight="240px" />
 
       <Box as="section" paddingY={{ base: 10, md: 14 }} paddingX={{ base: 4, md: 8 }}>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 10, md: 16 }} maxWidth="1200px" marginX="auto">
+        <Grid
+          templateColumns={{ base: '1fr', md: '0.4fr 1.6fr' }}
+          gap={20}
+          maxWidth="1400px"
+          marginX="auto"
+        >
           <VStack align="start" gap={6}>
             <Box>
-              <Text color="brand.500" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
+              <Text color="brand.400" fontWeight="bold" fontSize="lg" textTransform="uppercase" letterSpacing="wide">
                 Details
               </Text>
-              <Heading as="h2" size="xl" color="brand.700">
+              <Heading as="h2" size="3xl" color="brand.700" fontWeight="bold">
                 Let's Chat
               </Heading>
             </Box>
-            <Text color="slate.600">
+            <Text color="slate.900" letterSpacing="tight" fontWeight="medium" lineHeight="tall">
               Thank you for taking the time to browse my work. If you would like to get further in touch, you can
               contact me in these various ways. If you're looking to sell me a car warranty, please disregard this
               information.
             </Text>
-            <ContactList />
+            <ContactList color="brand.700" />
 
             <Box>
               <Text
-                color="brand.500"
+                color="coral.500"
                 fontWeight="bold"
-                fontSize="sm"
+                fontSize="md"
                 textTransform="uppercase"
                 letterSpacing="wide"
                 marginBottom={2}
@@ -39,18 +45,30 @@ export default function Contact() {
                 Download
               </Text>
               <VStack align="start" gap={1}>
-                <Link href={siteConfig.contact.resumeUrl} color="brand.600" fontWeight="medium">
-                  Resumé
+                <Link
+                  href={siteConfig.contact.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="slate.600"
+                  fontWeight="medium"
+                >
+                  Resumé &gt;
                 </Link>
-                <Link href={siteConfig.contact.portfolioPdfUrl} color="brand.600" fontWeight="medium">
-                  Portfolio PDF
+                <Link
+                  href={siteConfig.contact.portfolioPdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="slate.600"
+                  fontWeight="medium"
+                >
+                  Portfolio PDF &gt;
                 </Link>
               </VStack>
             </Box>
           </VStack>
 
-          <ResumeCard />
-        </SimpleGrid>
+          <ResumePdfPreview fileUrl={siteConfig.contact.resumeUrl} />
+        </Grid>
       </Box>
     </>
   )

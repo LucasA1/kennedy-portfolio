@@ -32,9 +32,9 @@ To find these in code, search `src/data/projects.ts` for `contentNotice`.
 - All project images are placeholders (see `public/images/README.md` for the
   file-naming convention — drop real files in at the same paths and they'll
   appear automatically, no code changes needed).
-- `public/resume/Kennedy-Papian-Resume.pdf` and the portfolio PDF referenced
-  in `src/data/siteConfig.ts` (`contact.portfolioPdfUrl`) don't exist yet —
-  the download links are wired up but will 404 until the real files are added.
+- Both the resume and portfolio PDFs are now in place at
+  `public/resume/Kennedy-Papian-Resume.pdf` and
+  `public/resume/Kennedy-Papian-Portfolio.pdf`.
 - The resume's education date range (2015–2018) differs from the Home page's
   bio, which doesn't state dates — transcribed as-is from the source PDF,
   not reconciled.
