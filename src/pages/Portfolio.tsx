@@ -10,10 +10,19 @@ export default function Portfolio() {
     <>
       <PageHero bg="brand.400" headerLineColor={brand700} eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
 
-      <Box as="section" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
-        <VStack maxWidth="1400px" marginX="auto" align="center" gap={8}>
+      <Box as="section" position="relative" overflow="hidden" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
+        <Box
+          position="absolute"
+          inset={0}
+          backgroundImage="url(/images/home/home-portfolio.svg)"
+          backgroundRepeat="no-repeat"
+          backgroundPosition="center"
+          backgroundSize="85%"
+          zIndex={0}
+        />
+        <VStack position="relative" zIndex={1} maxWidth="1400px" marginX="auto" align="center" gap={8}>
           <Box textAlign="center">
-            <Text color="brand.500" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
+            <Text color="brand.400" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
               Projects
             </Text>
             <Heading as="h2" size="2xl" fontWeight="bold" letterSpacing="tight" color="brand.700">
@@ -33,7 +42,7 @@ export default function Portfolio() {
             href={siteConfig.contact.portfolioPdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            color="brand.500"
+            color="brand.700"
             fontWeight="bold"
             fontSize="sm"
             textTransform="uppercase"

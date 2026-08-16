@@ -29,11 +29,11 @@ export default function ContactList({ color = 'inherit', includePhone = true }: 
         <HStack key={row.label} gap={2} color={color}>
           <row.icon aria-hidden="true" />
           {row.href ? (
-            <Link href={row.href} color="slate.800" _hover={{ textDecoration: 'underline' }}>
+            <Link href={row.href} color="slate.900" _hover={{ textDecoration: 'underline' }}>
               {row.label}
             </Link>
           ) : (
-            <Text color="slate.800">{row.label}</Text>
+            <Text color="slate.900">{row.label}</Text>
           )}
         </HStack>
       ))}

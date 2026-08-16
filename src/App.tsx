@@ -14,7 +14,7 @@ function App() {
     <Suspense
       fallback={
         <Center minHeight="100svh">
-          <Spinner size="xl" color="brand.500" />
+          <Spinner size="xl" color="brand.700" />
         </Center>
       }
     >

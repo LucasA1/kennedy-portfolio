@@ -3,7 +3,7 @@ import { siteConfig } from '../../data'
 import ContactList from '../ContactList'
 
 export default function Footer() {
-  const [fill] = useToken('colors', ['coral.300'])
+  const [fill] = useToken('colors', ['coral.400'])
 
   return (
     <Box as="footer" position="relative">

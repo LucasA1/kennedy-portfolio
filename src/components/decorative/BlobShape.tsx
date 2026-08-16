@@ -53,7 +53,7 @@ interface BlobShapeProps extends Omit<BoxProps, 'position' | 'transform'> {
 }
 
 export default function BlobShape({
-  fill = 'brand.200',
+  fill = 'brand.400',
   size = '110%',
   top,
   bottom,

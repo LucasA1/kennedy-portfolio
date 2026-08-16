@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AspectRatio, Box, Image, Text, type BoxProps } from '@chakra-ui/react'
 
-const PLACEHOLDER_SHADES = ['brand.100', 'brand.200', 'coral.100', 'coral.200', 'slate.200'] as const
+const PLACEHOLDER_SHADES = ['brand.200', 'coral.100', 'coral.400', 'slate.900'] as const
 
 function shadeForLabel(label: string) {
   let hash = 0
@@ -51,7 +51,7 @@ export default function PlaceholderImage({
       height="100%"
     >
       {showLabel && (
-        <Text fontSize="sm" color="slate.700" textAlign="center" fontWeight="medium">
+        <Text fontSize="sm" color="slate.900" textAlign="center" fontWeight="medium">
           {alt}
         </Text>
       )}

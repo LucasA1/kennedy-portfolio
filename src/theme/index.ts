@@ -4,10 +4,10 @@ const buttonRecipe = defineRecipe({
   variants: {
     variant: {
       solid: {
-        bg: "brand.500",
+        bg: "brand.400",
         color: "white",
         _hover: {
-          bg: "brand.600",
+          bg: "brand.700",
         },
       },
       outline: {

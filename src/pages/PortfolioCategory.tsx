@@ -19,7 +19,7 @@ export default function PortfolioCategory() {
 
   return (
     <>
-      <PageHero bg="brand.500" headerLineColor={brand700} eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
+      <PageHero bg="brand.400" headerLineColor={brand700} eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
 
       <Box as="section" paddingY={{ base: 10, md: 14 }} paddingX={{ base: 4, md: 8 }}>
         <VStack maxWidth="1400px" marginX="auto" align="stretch" gap={2}>
@@ -32,13 +32,13 @@ export default function PortfolioCategory() {
           >
             <Box
               asChild
-              color="coral.200"
+              color="coral.100"
               display="inline"
               _hover={{ textDecoration: 'underline' }}
             >
               <RouterLink to="/portfolio">Portfolio</RouterLink>
             </Box>
-            <Box as="span" color="coral.200">
+            <Box as="span" color="coral.100">
               {' '}
               / {category.name}
             </Box>
@@ -47,7 +47,7 @@ export default function PortfolioCategory() {
           {isMiscellaneous ? (
             <VStack align="center" gap={8} paddingTop={4}>
               <Box textAlign="center">
-                <Text color="brand.500" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
+                <Text color="brand.400" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
                   Projects
                 </Text>
                 <Heading as="h2" size="xl" color="brand.700">

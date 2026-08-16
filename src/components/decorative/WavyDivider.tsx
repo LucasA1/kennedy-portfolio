@@ -5,7 +5,7 @@ interface WavyDividerProps {
   flip?: boolean
 }
 
-export default function WavyDivider({ fill = 'coral.300', flip = false }: WavyDividerProps) {
+export default function WavyDivider({ fill = 'coral.400', flip = false }: WavyDividerProps) {
   const [resolvedFill] = useToken('colors', [fill])
 
   return (

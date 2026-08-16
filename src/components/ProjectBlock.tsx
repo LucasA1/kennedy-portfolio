@@ -58,7 +58,7 @@ export default function ProjectBlock({ project, reverse = false }: ProjectBlockP
             >
               Events included:
             </Text>
-            <List.Root color="slate.600" paddingLeft={4}>
+            <List.Root color="slate.900" paddingLeft={4}>
               {project.bulletList.map((item) => (
                 <List.Item key={item}>{item}</List.Item>
               ))}

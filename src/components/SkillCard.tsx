@@ -7,19 +7,19 @@ export default function SkillCard({ icon: Icon, title, description }: SkillCardD
       bg="white"
       borderRadius="sm"
       boxShadow="lg"
-      padding={5}
-      gap={2}
-      width="200px"
-      height="200px"
+      padding={6}
+      gap={3}
+      width="240px"
+      height="250px"
       flexShrink={0}
     >
-      <Box color="brand.700" fontSize="3xl">
+      <Box color="brand.700" fontSize="4xl">
         <Icon aria-hidden="true" />
       </Box>
-      <Text fontWeight="bold" color="brand.300" letterSpacing="tight" fontSize="lg">
+      <Text fontWeight="bold" color="brand.400" letterSpacing="tight" fontSize="xl">
         {title}
       </Text>
-      <Text color="black" fontSize="xs">
+      <Text color="black" fontSize="sm">
         {description}
       </Text>
     </VStack>

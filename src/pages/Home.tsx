@@ -33,7 +33,7 @@ export default function Home() {
                   variant={index === 0 ? 'solid' : 'outline'}
                   bg={index === 0 ? 'white' : undefined}
                   color={index === 0 ? 'brand.700' : 'white'}
-                  _hover={index === 0 ? { bg: 'whiteAlpha.900'} : {color: 'slate.700' }}
+                  _hover={index === 0 ? { bg: 'whiteAlpha.900'} : {color: 'slate.900' }}
                   borderRadius="full"
                   paddingX={6}
                 >
@@ -45,15 +45,21 @@ export default function Home() {
         </VStack>
       </PageHero>
 
-      <Box 
-        as="section" 
-        paddingY={16} 
-        paddingX={8}
+      <Box
+        as="section"
+        paddingY={16}
       >
-        <HStack align="center" justify="center" gap={6}>
+        <HStack
+          align="center"
+          justify="start"
+          gap={6}
+          maxWidth="1400px"
+          marginX="auto"
+          paddingX={{ base: 4, md: 8 }}
+        >
           <VStack maxW="260px" align="start" flexShrink={0}>
             <Box>
-              <Text color="brand.300" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
+              <Text color="brand.400" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
                 {skills.eyebrow}
               </Text>
               <Heading
@@ -66,7 +72,7 @@ export default function Home() {
               >
                 {skills.heading}
               </Heading>
-              <List.Root color="black" paddingLeft={4}>
+              <List.Root color="black" paddingLeft={5}>
                 {skills.bullets.map((bullet) => (
                   <List.Item key={bullet}>{bullet}</List.Item>
                 ))}
@@ -123,7 +129,7 @@ export default function Home() {
             <Text color="slate.900" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="tight" paddingBottom={0}>
               {about.eyebrow}
             </Text>
-            <Heading as="h2" size="2xl" fontWeight="bold" color="brand.600" letterSpacing="tight" paddingTop={0}>
+            <Heading as="h2" size="2xl" fontWeight="bold" color="700" letterSpacing="tight" paddingTop={0}>
               {about.heading}
             </Heading>
             <HStack gap={6} flexWrap="wrap">
@@ -131,9 +137,9 @@ export default function Home() {
                 <HStack key={item.label} gap={2} color="coral.400" >
                   <item.icon aria-hidden="true" />
                   <Box>
-                    <Text fontWeight="medium" color="slate.700">{item.label}</Text>
+                    <Text fontWeight="medium" color="slate.900">{item.label}</Text>
                     {item.sublabel && (
-                      <Text fontSize="xs" fontStyle="italic" color="slate.700">
+                      <Text fontSize="xs" fontStyle="italic" color="slate.900">
                         {item.sublabel}
                       </Text>
                     )}
