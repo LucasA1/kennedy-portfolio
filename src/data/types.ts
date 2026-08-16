@@ -94,7 +94,7 @@ export interface Project {
   paragraphs: string[]
   bulletList?: string[]
   statCallout?: string
-  images: ProjectImage[]
+  image: ProjectImage
   gallery?: ProjectImage[]
   /** Internal only, never rendered — flags PDF copy known to be reused/placeholder text. */
   contentNotice?: string

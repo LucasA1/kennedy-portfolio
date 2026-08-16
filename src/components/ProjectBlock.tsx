@@ -1,7 +1,6 @@
-import { Box, Heading, List, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Box, Flex, Grid, Heading, Image, List, Text, VStack } from '@chakra-ui/react'
 import type { Project } from '../data/types'
 import PlaceholderImage from './decorative/PlaceholderImage'
-import BlobShape from './decorative/BlobShape'
 
 interface ProjectBlockProps {
   project: Project
@@ -10,42 +9,53 @@ interface ProjectBlockProps {
 
 export default function ProjectBlock({ project, reverse = false }: ProjectBlockProps) {
   return (
-    <SimpleGrid
-      columns={{ base: 1, md: 2 }}
+    <Grid
+      templateColumns={{ base: '1fr', md: reverse ? '1.35fr 0.65fr' : '0.65fr 1.35fr' }}
       gap={{ base: 8, md: 12 }}
       alignItems="center"
       paddingY={{ base: 8, md: 12 }}
     >
       <VStack
         align="start"
-        gap={4}
         order={{ base: 1, md: reverse ? 2 : 1 }}
+        paddingLeft={{ base: 0, md: reverse ? 0 : 8 }}
       >
         <Text
-          color="brand.500"
+          color="brand.400"
           fontWeight="bold"
-          fontSize="sm"
+          fontSize="lg"
           textTransform="uppercase"
           letterSpacing="wide"
         >
           Project
         </Text>
-        <Heading as="h3" size="xl" color="brand.700">
+        <Heading
+          as="h1"
+          fontWeight="bold"
+          size="3xl"
+          color="brand.700"
+          marginTop={-3}
+        >
           {project.title}
         </Heading>
         {project.subtitle && (
-          <Text fontWeight="medium" color="slate.500">
+          <Text fontWeight="medium" color="slate.900">
             {project.subtitle}
           </Text>
         )}
         {project.paragraphs.map((paragraph) => (
-          <Text key={paragraph} color="slate.600">
+          <Text key={paragraph} fontWeight="medium" color="slate.900">
             {paragraph}
           </Text>
         ))}
         {project.bulletList && (
           <Box>
-            <Text fontWeight="semibold" color="slate.700" marginBottom={1}>
+            <Text 
+              textTransform="uppercase
+              "fontWeight="bold" 
+              color="slate.900" 
+              marginBottom={1}
+            >
               Events included:
             </Text>
             <List.Root color="slate.600" paddingLeft={4}>
@@ -56,34 +66,58 @@ export default function ProjectBlock({ project, reverse = false }: ProjectBlockP
           </Box>
         )}
         {project.statCallout && (
-          <Text color="brand.600" fontStyle="italic" fontWeight="medium">
+          <Text color="slate.900" fontStyle="italic" fontWeight="medium">
             {project.statCallout}
           </Text>
         )}
       </VStack>
 
-      <Box position="relative" order={{ base: 2, md: reverse ? 1 : 2 }}>
-        <BlobShape fill="brand.800" size="115%" top="-8%" left="-8%" />
-        <VStack position="relative" zIndex={1} gap={4}>
-          {project.images.map((image) => (
+      <Box
+        position="relative"
+        order={{ base: 2, md: reverse ? 1 : 2 }}
+        width="80%"
+        marginLeft={{ base: 'auto', md: reverse ? 8 : 'auto' }}
+        marginRight="auto"
+      >
+        {!reverse && (
+          <Image
+            src="/images/svgs/portfolio-blob.svg"
+            alt=""
+            aria-hidden="true"
+            pointerEvents="none"
+            position="absolute"
+            right="-12%"
+            width="90%"
+            zIndex={0}
+          />
+        )}
+        <Box position="relative" zIndex={1}>
+          <PlaceholderImage
+            src={project.image.src}
+            alt={project.image.alt}
+            aspectRatio={project.image.aspectRatio}
+          />
+        </Box>
+      </Box>
+
+      {project.gallery && (
+        <Flex
+          wrap="wrap"
+          gap={4}
+          gridColumn={{ md: '1 / -1' }}
+          order={3}
+        >
+          {project.gallery.map((image) => (
             <PlaceholderImage
               key={image.src}
               src={image.src}
               alt={image.alt}
-              aspectRatio={image.aspectRatio ?? 4 / 3}
-              borderRadius="lg"
+              aspectRatio={image.aspectRatio}
+              justified
             />
           ))}
-        </VStack>
-      </Box>
-
-      {project.gallery && (
-        <SimpleGrid columns={{ base: 2, md: 3 }} gap={4} gridColumn={{ md: '1 / -1' }}>
-          {project.gallery.map((image) => (
-            <PlaceholderImage key={image.src} src={image.src} alt={image.alt} aspectRatio={image.aspectRatio ?? 1} />
-          ))}
-        </SimpleGrid>
+        </Flex>
       )}
-    </SimpleGrid>
+    </Grid>
   )
 }

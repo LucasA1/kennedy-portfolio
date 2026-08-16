@@ -1,11 +1,12 @@
-import { Navigate, useParams } from 'react-router-dom'
-import { Box, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Link as RouterLink, Navigate, useParams } from 'react-router-dom'
+import { Box, Heading, SimpleGrid, Text, VStack, useToken } from '@chakra-ui/react'
 import PageHero from '../components/layout/PageHero'
 import ProjectBlock from '../components/ProjectBlock'
 import PlaceholderImage from '../components/decorative/PlaceholderImage'
 import { categories, miscGalleryItems, projects } from '../data'
 
 export default function PortfolioCategory() {
+  const [brand700] = useToken('colors', ['brand.700'])
   const { categorySlug } = useParams()
   const category = categories.find((item) => item.slug === categorySlug)
 
@@ -18,12 +19,29 @@ export default function PortfolioCategory() {
 
   return (
     <>
-      <PageHero bg="brand.500" eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
+      <PageHero bg="brand.500" headerLineColor={brand700} eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
 
       <Box as="section" paddingY={{ base: 10, md: 14 }} paddingX={{ base: 4, md: 8 }}>
-        <VStack maxWidth="1200px" marginX="auto" align="stretch" gap={2}>
-          <Text color="coral.500" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
-            Portfolio / {category.name}
+        <VStack maxWidth="1400px" marginX="auto" align="stretch" gap={2}>
+          <Text
+            fontWeight="bold"
+            fontSize="lg"
+            textTransform="uppercase"
+            letterSpacing="wide"
+            paddingLeft={{ base: 0, md: 8 }}
+          >
+            <Box
+              asChild
+              color="coral.200"
+              display="inline"
+              _hover={{ textDecoration: 'underline' }}
+            >
+              <RouterLink to="/portfolio">Portfolio</RouterLink>
+            </Box>
+            <Box as="span" color="coral.200">
+              {' '}
+              / {category.name}
+            </Box>
           </Text>
 
           {isMiscellaneous ? (
@@ -45,13 +63,7 @@ export default function PortfolioCategory() {
           ) : (
             <VStack align="stretch" gap={0}>
               {categoryProjects.map((project, index) => (
-                <Box
-                  key={project.id}
-                  borderTopWidth={index > 0 ? '1px' : 0}
-                  borderColor="slate.200"
-                >
-                  <ProjectBlock project={project} reverse={index % 2 === 1} />
-                </Box>
+                <ProjectBlock key={project.id} project={project} reverse={index % 2 === 1} />
               ))}
             </VStack>
           )}

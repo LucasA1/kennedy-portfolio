@@ -17,10 +17,7 @@ export const projects: Project[] = [
     ],
     statCallout:
       'The design refresh sent out to a second group of stakeholders resulted in a 25%+ increase in click-through engagement.',
-    images: [
-      { src: '/images/email-marketing/email-refresh-01.jpg', alt: 'Original email newsletter layout' },
-      { src: '/images/email-marketing/email-refresh-02.jpg', alt: 'Redesigned "50,000 Field Notes" email layout' },
-    ],
+    image: { src: '/images/projects/email/email-one.png', alt: 'Redesigned "50,000 Field Notes" email layout' },
   },
   {
     id: 'internal-communications-email',
@@ -30,10 +27,7 @@ export const projects: Project[] = [
       'I developed a wide range of internal communications, including monthly newsletters, leadership updates, and project-specific campaigns. Using Adobe Illustrator, Photoshop, SendGrid, and Workshop, I created visually engaging email experiences that aligned with organizational goals and improved message clarity.',
       'My communications consistently achieved higher engagement rates than standard pre-formatted templates, demonstrating the value of custom design, thoughtful content hierarchy, and audience-focused messaging.',
     ],
-    images: [
-      { src: '/images/email-marketing/internal-communications-01.jpg', alt: 'Quarterly IT newsletter email' },
-      { src: '/images/email-marketing/internal-communications-02.jpg', alt: 'CrowdStrike-Microsoft incident impact brief email' },
-    ],
+    image: { src: '/images/projects/email/email-two.png', alt: 'CrowdStrike-Microsoft incident impact brief email' },
   },
 
   // SharePoint Design
@@ -44,9 +38,16 @@ export const projects: Project[] = [
     paragraphs: [
       'This is a SharePoint site built with the intention of giving employees one spot to find important information such as news, announcements, team files, organization charts, and resources. Through thoughtful design, clear information architecture, and user-focused communication, I helped transform complex IT content into an accessible and engaging digital experience.',
     ],
-    images: [
-      { src: '/images/sharepoint-design/internal-hub-01.jpg', alt: 'Enterprise IT Hub SharePoint homepage' },
+    image: { src: '/images/projects/sharepoint/sharepoint-one.png', alt: 'Enterprise IT Hub SharePoint homepage' },
+  },
+  {
+    id: 'internal-hub-2',
+    categorySlug: 'sharepoint-design',
+    title: 'Internal Hub #2',
+    paragraphs: [
+      'This site was also designed and developed as a centralized hub for internal IT employees. The goal was to improve the ability to discover, enhances employee engagement, and provides an intuitive experience that helps users quickly find the information and support they need.',
     ],
+    image: { src: '/images/projects/sharepoint/sharepoint-two.png', alt: 'Enterprise IT Hub SharePoint homepage' },
   },
 
   // Event Management
@@ -65,16 +66,10 @@ export const projects: Project[] = [
       'Holiday parties',
       'Off-site baseball game outing',
     ],
-    images: [
-      { src: '/images/event-management/employee-engagement-events-01.jpg', alt: 'EIT FS&D Cookout event poster' },
-    ],
+    image: { src: '/images/projects/event/event-one.png', alt: 'EIT FS&D Cookout event poster' },
     gallery: [
-      { src: '/images/event-management/gallery-chili-cookoff.jpg', alt: 'IT Colleague Chili Cook-Off poster' },
-      { src: '/images/event-management/gallery-trivia.jpg', alt: 'EIT & FS&D IT trivia event graphic' },
-      { src: '/images/event-management/gallery-cookie-bakeoff.jpg', alt: 'Great Corteva Holiday Cookie Bake Off poster' },
-      { src: '/images/event-management/gallery-may-day.jpg', alt: 'Enterprise IT May Day Basket snack station poster' },
-      { src: '/images/event-management/gallery-gameday-1.jpg', alt: 'Game Day football graphic' },
-      { src: '/images/event-management/gallery-gameday-2.jpg', alt: 'Game Day football graphic, second matchup' },
+      { src: '/images/projects/event/event-grid-one.png', alt: 'Employee engagement event poster' },
+      { src: '/images/projects/event/event-grid-two.png', alt: 'Employee engagement event poster' },
     ],
   },
 
@@ -93,15 +88,11 @@ export const projects: Project[] = [
       'Holiday parties',
       'Off-site baseball game outing',
     ],
-    images: [
-      { src: '/images/executive-presentations/executive-presentations-01.jpg', alt: 'EIT Voice of Customer Survey executive summary slides' },
-      { src: '/images/executive-presentations/executive-presentations-02.jpg', alt: 'Enterprise IT OpEx and talent & leadership slides' },
-      { src: '/images/executive-presentations/executive-presentations-03.jpg', alt: 'Enterprise IT org structure and disaster recovery roadmap slides' },
-    ],
+    image: { src: '/images/projects/presentations/presentation-one.png', alt: 'EIT Voice of Customer Survey executive summary slides' },
     gallery: [
-      { src: '/images/executive-presentations/gallery-ai-in-action.jpg', alt: 'AI in Action BioIntelligence & Sprout presentation slides' },
-      { src: '/images/executive-presentations/gallery-market-to-sell.jpg', alt: 'Commercial market-to-sell presentation slides' },
-      { src: '/images/executive-presentations/gallery-ai-value-framework.jpg', alt: 'AI value framework presentation slides' },
+      { src: '/images/projects/presentations/presentation-grid-one.png', alt: 'Executive presentation slide' },
+      { src: '/images/projects/presentations/presentation-grid-two.png', alt: 'Executive presentation slide' },
+      { src: '/images/projects/presentations/presentation-grid-three.png', alt: 'Executive presentation slide' },
     ],
     contentNotice: REUSED_EVENTS_COPY_NOTICE,
   },
@@ -121,10 +112,7 @@ export const projects: Project[] = [
       'Holiday parties',
       'Off-site baseball game outing',
     ],
-    images: [
-      { src: '/images/brand-stewardship/roshek-skinner-01.jpg', alt: 'Roshek Skinner Financial Services business card' },
-      { src: '/images/brand-stewardship/roshek-skinner-02.jpg', alt: '"Let\'s Bowl!" Roshek Skinner event flyer' },
-    ],
+    image: { src: '/images/projects/brand/brand-one.png', alt: 'Roshek Skinner Financial Services business card' },
     contentNotice: REUSED_EVENTS_COPY_NOTICE,
   },
   {
@@ -136,9 +124,7 @@ export const projects: Project[] = [
       'I developed a wide range of internal communications, including monthly newsletters, leadership updates, and project-specific campaigns. Using Adobe Illustrator, Photoshop, SendGrid, and Workshop, I created visually engaging email experiences that aligned with organizational goals and improved message clarity.',
       'My communications consistently achieved higher engagement rates than standard pre-formatted templates, demonstrating the value of custom design, thoughtful content hierarchy, and audience-focused messaging.',
     ],
-    images: [
-      { src: '/images/brand-stewardship/bral-neidert-01.jpg', alt: 'Bral | Neidert Private Wealth Advisors rebrand mockup' },
-    ],
+    image: { src: '/images/projects/brand/brand-two.png', alt: 'Bral | Neidert Private Wealth Advisors rebrand mockup' },
     contentNotice: REUSED_GENERIC_COMMS_COPY_NOTICE,
   },
 
@@ -157,10 +143,7 @@ export const projects: Project[] = [
       'Holiday parties',
       'Off-site baseball game outing',
     ],
-    images: [
-      { src: '/images/marketing-campaigns/alliance-environmental-01.jpg', alt: 'Alliance Environmental radon testing flyer' },
-      { src: '/images/marketing-campaigns/alliance-environmental-02.jpg', alt: 'Alliance Environmental radon test in progress door hanger' },
-    ],
+    image: { src: '/images/projects/marketing/marketing-one.png', alt: 'Alliance Environmental radon testing flyer' },
     contentNotice: REUSED_EVENTS_COPY_NOTICE,
   },
   {
@@ -171,9 +154,7 @@ export const projects: Project[] = [
       'I developed a wide range of internal communications, including monthly newsletters, leadership updates, and project-specific campaigns. Using Adobe Illustrator, Photoshop, SendGrid, and Workshop, I created visually engaging email experiences that aligned with organizational goals and improved message clarity.',
       'My communications consistently achieved higher engagement rates than standard pre-formatted templates, demonstrating the value of custom design, thoughtful content hierarchy, and audience-focused messaging.',
     ],
-    images: [
-      { src: '/images/marketing-campaigns/behavior-in-action-01.jpg', alt: '"Think Bold, Drive Value, Work Smart" Behavior in Action campaign graphics' },
-    ],
+    image: { src: '/images/projects/marketing/marketing-two.png', alt: '"Think Bold, Drive Value, Work Smart" Behavior in Action campaign graphics' },
     contentNotice: REUSED_GENERIC_COMMS_COPY_NOTICE,
   },
 
@@ -192,9 +173,7 @@ export const projects: Project[] = [
       'Holiday parties',
       'Off-site baseball game outing',
     ],
-    images: [
-      { src: '/images/ui-ux-design/it-explorer-01.jpg', alt: 'Corteva IT Explorer onboarding UI mockup' },
-    ],
+    image: { src: '/images/projects/ui-ux/ui-ux-one.png', alt: 'Corteva IT Explorer onboarding UI mockup' },
     contentNotice: REUSED_EVENTS_COPY_NOTICE,
   },
   {
@@ -211,9 +190,7 @@ export const projects: Project[] = [
       'Holiday parties',
       'Off-site baseball game outing',
     ],
-    images: [
-      { src: '/images/ui-ux-design/profile-page-01.jpg', alt: 'Corteva Connect employee profile page UI mockup' },
-    ],
+    image: { src: '/images/projects/ui-ux/ui-ux-two.png', alt: 'Corteva Connect employee profile page UI mockup' },
     contentNotice: REUSED_EVENTS_COPY_NOTICE,
   },
   {
@@ -224,9 +201,7 @@ export const projects: Project[] = [
       'I developed a wide range of internal communications, including monthly newsletters, leadership updates, and project-specific campaigns. Using Adobe Illustrator, Photoshop, SendGrid, and Workshop, I created visually engaging email experiences that aligned with organizational goals and improved message clarity.',
       'My communications consistently achieved higher engagement rates than standard pre-formatted templates, demonstrating the value of custom design, thoughtful content hierarchy, and audience-focused messaging.',
     ],
-    images: [
-      { src: '/images/ui-ux-design/power-bi-report-templates-01.jpg', alt: 'Branded Power BI report template mockups' },
-    ],
+    image: { src: '/images/projects/ui-ux/ui-ux-three.png', alt: 'Branded Power BI report template mockups' },
     contentNotice: REUSED_GENERIC_COMMS_COPY_NOTICE,
   },
   {
@@ -237,9 +212,7 @@ export const projects: Project[] = [
       'I developed a wide range of internal communications, including monthly newsletters, leadership updates, and project-specific campaigns. Using Adobe Illustrator, Photoshop, SendGrid, and Workshop, I created visually engaging email experiences that aligned with organizational goals and improved message clarity.',
       'My communications consistently achieved higher engagement rates than standard pre-formatted templates, demonstrating the value of custom design, thoughtful content hierarchy, and audience-focused messaging.',
     ],
-    images: [
-      { src: '/images/ui-ux-design/app-icons-01.jpg', alt: 'Set of eight branded app icons' },
-    ],
+    image: { src: '/images/projects/ui-ux/ui-ux-four.png', alt: 'Set of eight branded app icons' },
     contentNotice: REUSED_GENERIC_COMMS_COPY_NOTICE,
   },
 ]

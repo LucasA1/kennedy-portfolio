@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AspectRatio, Box, Image, Text } from '@chakra-ui/react'
+import { AspectRatio, Box, Image, Text, type BoxProps } from '@chakra-ui/react'
 
 const PLACEHOLDER_SHADES = ['brand.100', 'brand.200', 'coral.100', 'coral.200', 'slate.200'] as const
 
@@ -18,33 +18,101 @@ interface PlaceholderImageProps {
   borderRadius?: string | number
   /** Set false when a caption is already rendered elsewhere (e.g. CategoryTile's overlay label), to avoid duplicate/colliding text. */
   showLabel?: boolean
+  /**
+   * Renders as a flex item that grows in width proportionally to its own aspect ratio, at a
+   * shared fixed height, so a row of mixed-aspect images (e.g. gallery grids) fills the full
+   * width of its flex container edge-to-edge without cropping. Parent must be `display: flex`.
+   */
+  justified?: boolean
+  /** Shared row height used when `justified` is set. */
+  rowHeight?: BoxProps['height']
 }
 
 export default function PlaceholderImage({
   src,
   alt,
-  aspectRatio = 4 / 3,
+  aspectRatio,
   borderRadius = 'md',
   showLabel = true,
+  justified,
+  rowHeight,
 }: PlaceholderImageProps) {
   const [failed, setFailed] = useState(!src)
+  const [measuredRatio, setMeasuredRatio] = useState(aspectRatio)
+
+  const fallback = (
+    <Box
+      bg={shadeForLabel(alt)}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      padding={4}
+      width="100%"
+      height="100%"
+    >
+      {showLabel && (
+        <Text fontSize="sm" color="slate.700" textAlign="center" fontWeight="medium">
+          {alt}
+        </Text>
+      )}
+    </Box>
+  )
+
+  if (justified) {
+    const ratio = measuredRatio ?? 1.5
+    return (
+      <Box
+        flex={`${ratio} 1 0px`}
+        minWidth={0}
+        height={rowHeight}
+        borderRadius={borderRadius}
+        overflow="hidden"
+      >
+        {failed || !src ? (
+          fallback
+        ) : (
+          <Image
+            src={src}
+            alt={alt}
+            loading="lazy"
+            width="100%"
+            height="100%"
+            objectFit="contain"
+            onLoad={(event) => {
+              const { naturalWidth, naturalHeight } = event.currentTarget
+              if (naturalWidth && naturalHeight) setMeasuredRatio(naturalWidth / naturalHeight)
+            }}
+            onError={() => setFailed(true)}
+          />
+        )}
+      </Box>
+    )
+  }
+
+  if (!aspectRatio) {
+    return (
+      <Box width="100%" borderRadius={borderRadius} overflow="hidden">
+        {failed || !src ? (
+          <AspectRatio ratio={4 / 3}>{fallback}</AspectRatio>
+        ) : (
+          <Image
+            src={src}
+            alt={alt}
+            loading="lazy"
+            width="100%"
+            height="auto"
+            display="block"
+            onError={() => setFailed(true)}
+          />
+        )}
+      </Box>
+    )
+  }
 
   return (
     <AspectRatio ratio={aspectRatio} width="100%" borderRadius={borderRadius} overflow="hidden">
       {failed || !src ? (
-        <Box
-          bg={shadeForLabel(alt)}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          padding={4}
-        >
-          {showLabel && (
-            <Text fontSize="sm" color="slate.700" textAlign="center" fontWeight="medium">
-              {alt}
-            </Text>
-          )}
-        </Box>
+        fallback
       ) : (
         <Image
           src={src}

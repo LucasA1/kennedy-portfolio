@@ -88,7 +88,7 @@ export default function Home() {
         <SimpleGrid
           columns={2}
           gap={8}
-          maxWidth="1200px"
+          maxWidth="1400px"
           marginX="auto"
           alignItems="stretch"
         >
@@ -168,9 +168,9 @@ export default function Home() {
           zIndex={0}
         />
         <VStack 
-          position="relative" 
-          zIndex={1} 
-          maxWidth="1200px" 
+          position="relative"
+          zIndex={1}
+          maxWidth="1400px"
           marginX="auto" 
           align="center" 
           gap={8}

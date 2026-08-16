@@ -24,7 +24,13 @@ export default function ResumePdfPreview({ fileUrl }: ResumePdfPreviewProps) {
   }, [])
 
   return (
-    <Box ref={containerRef} bg="white" borderRadius="lg" boxShadow="lg" overflow="hidden" aspectRatio={8.5 / 11}>
+    <Box 
+      ref={containerRef} 
+      bg="white" 
+      boxShadow="2xl" 
+      overflow="hidden" 
+      aspectRatio={8.5 / 11}
+    >
       <Document file={fileUrl} loading={null} error={null}>
         <Page pageNumber={1} width={width} renderTextLayer={false} renderAnnotationLayer={false} />
       </Document>

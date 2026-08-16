@@ -7,7 +7,7 @@ export default function Header({ lineColor = '#ff9a7f' }: { lineColor?: string }
 
   return (
     <Box as="header" position="relative" zIndex={2} paddingY={4} paddingX={{ base: 4, md: 8 }}>
-      <Flex align="center" justify="center" maxWidth="1200px" marginX="auto">
+      <Flex align="center" justify="center" maxWidth="1400px" marginX="auto">
         <HStack paddingTop={6} gap={{ base: 4, md: 8 }} as="nav">
           {siteConfig.navLinks.map((link) => (
             <Box

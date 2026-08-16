@@ -8,11 +8,19 @@ export default function Contact() {
   const [brand700] = useToken('colors', ['brand.700'])
   return (
     <>
-      <PageHero bg="coral.400"  headerLineColor={brand700}  eyebrow="Additional Information" title="Contact" minHeight="240px" />
+      <PageHero
+        bg="coral.400"
+        headerLineColor={brand700}
+        eyebrow="Additional Information"
+        title="Contact"
+        minHeight="240px"
+        showBlob
+        bottomRightBlobSrc="/images/svgs/contact-header-bottom-right.svg"
+      />
 
       <Box as="section" paddingY={{ base: 10, md: 14 }} paddingX={{ base: 4, md: 8 }}>
         <Grid
-          templateColumns={{ base: '1fr', md: '0.4fr 1.6fr' }}
+          templateColumns={{ base: '1fr', md: '0.6fr 1.4fr' }}
           gap={20}
           maxWidth="1400px"
           marginX="auto"
@@ -35,7 +43,7 @@ export default function Contact() {
 
             <Box>
               <Text
-                color="coral.500"
+                color="coral.400"
                 fontWeight="bold"
                 fontSize="md"
                 textTransform="uppercase"
@@ -49,19 +57,21 @@ export default function Contact() {
                   href={siteConfig.contact.resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  color="slate.600"
+                  color="slate.900"
                   fontWeight="medium"
+                  textDecoration="underline"
                 >
-                  Resumé &gt;
+                  Resumé
                 </Link>
                 <Link
                   href={siteConfig.contact.portfolioPdfUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  color="slate.600"
+                  color="slate.900"
                   fontWeight="medium"
+                  textDecoration="underline"
                 >
-                  Portfolio PDF &gt;
+                  Portfolio PDF
                 </Link>
               </VStack>
             </Box>

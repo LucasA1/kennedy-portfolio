@@ -11,6 +11,7 @@ interface PageHeroProps {
   children?: ReactNode
   showStripeCorner?: boolean
   showBlob?: boolean
+  bottomRightBlobSrc?: string
   minHeight?: string
   image?: ContentImage
   headerLineColor?: string
@@ -21,6 +22,8 @@ export default function PageHero({
   eyebrow,
   title,
   children,
+  showBlob,
+  bottomRightBlobSrc = '/images/svgs/portfolio-header-bottom-right.svg',
   minHeight = '280px',
   image,
   headerLineColor,
@@ -28,16 +31,29 @@ export default function PageHero({
   return (
     <Box as="section" position="relative" bg={bg} overflow="hidden" minHeight={minHeight}>
       <Image
-        src="/images/home/hero-top-left.svg"
+        src={showBlob ? '/images/svgs/portfolio-header-top-left.svg' : '/images/home/hero-top-left.svg'}
         alt=""
         aria-hidden="true"
         pointerEvents="none"
         position="absolute"
         top={0}
         left={0}
-        width="25%"
+        width="20%"
         zIndex={0}
       />
+      {showBlob && (
+        <Image
+          src={bottomRightBlobSrc}
+          alt=""
+          aria-hidden="true"
+          pointerEvents="none"
+          position="absolute"
+          bottom={0}
+          right={0}
+          width="20%"
+          zIndex={0}
+        />
+      )}
       <Header lineColor={headerLineColor} />
       <Flex
         align="center"
@@ -46,7 +62,7 @@ export default function PageHero({
         direction={{ base: 'column', md: 'row' }}
         position="relative"
         zIndex={1}
-        maxWidth="1200px"
+        maxWidth="1400px"
         marginX="auto"
         paddingX={{ base: 4, md: 8 }}
         paddingTop={{ base: 8, md: 12 }}
@@ -91,7 +107,7 @@ export default function PageHero({
           left={0}
           right={0}
           height="100%"
-          maxWidth="1200px"
+          maxWidth="1400px"
           marginX="auto"
           paddingX={{ base: 4, md: 8 }}
           pointerEvents="none"

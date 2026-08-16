@@ -32,7 +32,7 @@ export default function Footer() {
       >
         <Grid
           width="100%"
-          maxWidth="1200px"
+          maxWidth="1400px"
           marginX="auto"
           templateColumns={{ base: '1fr', md: 'repeat(2, max-content)' }}
           alignItems={{ base: 'start', md: 'center' }}
