@@ -22,10 +22,10 @@ export default function Portfolio() {
         />
         <VStack position="relative" zIndex={1} maxWidth="1400px" marginX="auto" align="center" gap={8}>
           <Box textAlign="center">
-            <Text color="brand.400" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
+            <Text color="brand.400" fontWeight="bold" fontSize="lg" textTransform="uppercase" letterSpacing="tight">
               Projects
             </Text>
-            <Heading as="h2" size="2xl" fontWeight="bold" letterSpacing="tight" color="brand.700">
+            <Heading as="h1" size="3xl" fontWeight="bold" letterSpacing="tight" color="brand.700">
               Areas of Expertise
             </Heading>
           </Box>

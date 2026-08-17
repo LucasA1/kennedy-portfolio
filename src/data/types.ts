@@ -96,8 +96,6 @@ export interface Project {
   statCallout?: string
   image: ProjectImage
   gallery?: ProjectImage[]
-  /** Internal only, never rendered — flags PDF copy known to be reused/placeholder text. */
-  contentNotice?: string
 }
 
 export interface EducationItem {

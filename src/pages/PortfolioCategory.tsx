@@ -63,7 +63,7 @@ export default function PortfolioCategory() {
           ) : (
             <VStack align="stretch" gap={0}>
               {categoryProjects.map((project, index) => (
-                <ProjectBlock key={project.id} project={project} reverse={index % 2 === 1} />
+                <ProjectBlock key={project.id} project={project} reverse={index % 2 === 1} first={index === 0} />
               ))}
             </VStack>
           )}

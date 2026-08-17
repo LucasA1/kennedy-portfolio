@@ -5,9 +5,10 @@ import PlaceholderImage from './decorative/PlaceholderImage'
 interface ProjectBlockProps {
   project: Project
   reverse?: boolean
+  first?: boolean
 }
 
-export default function ProjectBlock({ project, reverse = false }: ProjectBlockProps) {
+export default function ProjectBlock({ project, reverse = false, first = false }: ProjectBlockProps) {
   return (
     <Grid
       templateColumns={{ base: '1fr', md: reverse ? '1.35fr 0.65fr' : '0.65fr 1.35fr' }}
@@ -44,7 +45,7 @@ export default function ProjectBlock({ project, reverse = false }: ProjectBlockP
           </Text>
         )}
         {project.paragraphs.map((paragraph) => (
-          <Text key={paragraph} fontWeight="medium" color="slate.900">
+          <Text key={paragraph} color="slate.900">
             {paragraph}
           </Text>
         ))}
@@ -66,7 +67,7 @@ export default function ProjectBlock({ project, reverse = false }: ProjectBlockP
           </Box>
         )}
         {project.statCallout && (
-          <Text color="slate.900" fontStyle="italic" fontWeight="medium">
+          <Text color="slate.900" fontStyle="italic">
             {project.statCallout}
           </Text>
         )}
@@ -78,8 +79,9 @@ export default function ProjectBlock({ project, reverse = false }: ProjectBlockP
         width="80%"
         marginLeft={{ base: 'auto', md: reverse ? 8 : 'auto' }}
         marginRight="auto"
+        marginBottom={10}
       >
-        {!reverse && (
+        {first && (
           <Image
             src="/images/svgs/portfolio-blob.svg"
             alt=""
@@ -91,7 +93,10 @@ export default function ProjectBlock({ project, reverse = false }: ProjectBlockP
             zIndex={0}
           />
         )}
-        <Box position="relative" zIndex={1}>
+        <Box 
+          position="relative" 
+          zIndex={1}
+        >
           <PlaceholderImage
             src={project.image.src}
             alt={project.image.alt}

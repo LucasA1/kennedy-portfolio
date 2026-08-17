@@ -1,10 +1,5 @@
 import type { Project } from './types'
 
-const REUSED_EVENTS_COPY_NOTICE =
-  'Source PDF reuses the "Employee Engagement Events" write-up verbatim here; likely leftover placeholder text. See CONTENT-TODO.md.'
-const REUSED_GENERIC_COMMS_COPY_NOTICE =
-  'Source PDF reuses the generic "wide range of internal communications... SendGrid and Workshop" write-up verbatim here; likely leftover placeholder text. See CONTENT-TODO.md.'
-
 export const projects: Project[] = [
   // Email Marketing
   {
@@ -79,22 +74,15 @@ export const projects: Project[] = [
     categorySlug: 'executive-presentations',
     title: 'Executive Presentations',
     paragraphs: [
-      'I was responsible for hosting multiple employee engagement events every year, including organizing the event, creating signage, event materials, and execution. Events ranged from 50 to 400 people, and included participants from employees to executive leadership.',
-    ],
-    bulletList: [
-      'BBQ cookouts',
-      'Executive round table discussions',
-      'Town hall meetings',
-      'Holiday parties',
-      'Off-site baseball game outing',
+      'Presentation design is where storytelling and visual communication come together. For executive audiences, every slide must guide attention, simplify complex information, and reinforce key messages. My role is to transform content into presentations that are not only informative but memorable.',
+      'These projects varied widely in scope. Some began as content-heavy decks in need of stronger visual hierarchy and design refinement, while others were developed from the ground up through close collaboration with stakeholders.'
     ],
     image: { src: '/images/projects/presentations/presentation-one.png', alt: 'EIT Voice of Customer Survey executive summary slides' },
     gallery: [
       { src: '/images/projects/presentations/presentation-grid-one.png', alt: 'Executive presentation slide' },
       { src: '/images/projects/presentations/presentation-grid-two.png', alt: 'Executive presentation slide' },
       { src: '/images/projects/presentations/presentation-grid-three.png', alt: 'Executive presentation slide' },
-    ],
-    contentNotice: REUSED_EVENTS_COPY_NOTICE,
+    ]
   },
 
   // Brand Stewardship
@@ -103,17 +91,9 @@ export const projects: Project[] = [
     categorySlug: 'brand-stewardship',
     title: 'Roshek Skinner Financial',
     paragraphs: [
-      'I was responsible for hosting multiple employee engagement events every year, including organizing the event, creating signage, event materials, and execution. Events ranged from 50 to 400 people, and included participants from employees to executive leadership.',
-    ],
-    bulletList: [
-      'BBQ cookouts',
-      'Executive round table discussions',
-      'Town hall meetings',
-      'Holiday parties',
-      'Off-site baseball game outing',
+      'This project included creating a logo, business card, and invite to a bowling party. The logo symbol combines the letters R and S into a single geometric symbol. The mark represents the partnership between the two individuals while providing a versatile foundation for the broader visual identity.',
     ],
     image: { src: '/images/projects/brand/brand-one.png', alt: 'Roshek Skinner Financial Services business card' },
-    contentNotice: REUSED_EVENTS_COPY_NOTICE,
   },
   {
     id: 'bral-neidert-advisors',
@@ -121,11 +101,9 @@ export const projects: Project[] = [
     title: 'Bral | Neidert Advisors',
     subtitle: 'Where Money Meets Life',
     paragraphs: [
-      'I developed a wide range of internal communications, including monthly newsletters, leadership updates, and project-specific campaigns. Using Adobe Illustrator, Photoshop, SendGrid, and Workshop, I created visually engaging email experiences that aligned with organizational goals and improved message clarity.',
-      'My communications consistently achieved higher engagement rates than standard pre-formatted templates, demonstrating the value of custom design, thoughtful content hierarchy, and audience-focused messaging.',
+      'The goal of this project was to revitalize an existing logo and create a cohesive brochure that reflected the brand\'s evolution. By refining the logo\'s visual elements and modernizing its overall appearance, I developed a stronger foundation for the brand. The accompanying brochure leveraged the refreshed identity to deliver information in a clear, engaging, and visually consistent format.',      
     ],
     image: { src: '/images/projects/brand/brand-two.png', alt: 'Bral | Neidert Private Wealth Advisors rebrand mockup' },
-    contentNotice: REUSED_GENERIC_COMMS_COPY_NOTICE,
   },
 
   // Marketing Campaigns
@@ -134,28 +112,19 @@ export const projects: Project[] = [
     categorySlug: 'marketing-campaigns',
     title: 'Alliance Environmental',
     paragraphs: [
-      'I was responsible for hosting multiple employee engagement events every year, including organizing the event, creating signage, event materials, and execution. Events ranged from 50 to 400 people, and included participants from employees to executive leadership.',
-    ],
-    bulletList: [
-      'BBQ cookouts',
-      'Executive round table discussions',
-      'Town hall meetings',
-      'Holiday parties',
-      'Off-site baseball game outing',
+      'To support the introduction of a new radon service offering, I developed a suite of marketing materials that included a custom service icon, LinkedIn promotional graphic, and a service alert door hanger. The final campaign delivered a consistent message across digital and print channels, helping increase visibility for radon testing',
     ],
     image: { src: '/images/projects/marketing/marketing-one.png', alt: 'Alliance Environmental radon testing flyer' },
-    contentNotice: REUSED_EVENTS_COPY_NOTICE,
   },
   {
     id: 'behavior-in-action',
     categorySlug: 'marketing-campaigns',
     title: 'Behavior in Action',
     paragraphs: [
-      'I developed a wide range of internal communications, including monthly newsletters, leadership updates, and project-specific campaigns. Using Adobe Illustrator, Photoshop, SendGrid, and Workshop, I created visually engaging email experiences that aligned with organizational goals and improved message clarity.',
-      'My communications consistently achieved higher engagement rates than standard pre-formatted templates, demonstrating the value of custom design, thoughtful content hierarchy, and audience-focused messaging.',
+      'What started as a bulleted list and three “values”, this campaign was designed to reinforce company values by highlighting real-world examples of employees demonstrating key behaviors in their daily work. I created a variety of campaign materials that transformed abstract concepts into engaging visual stories, helping employees connect organizational values with meaningful actions and fostering a stronger culture of recognition and accountability.',
+      'Materials included social media graphics, posters, virtual meeting backgrounds, and stickers'
     ],
     image: { src: '/images/projects/marketing/marketing-two.png', alt: '"Think Bold, Drive Value, Work Smart" Behavior in Action campaign graphics' },
-    contentNotice: REUSED_GENERIC_COMMS_COPY_NOTICE,
   },
 
   // UI/UX Design
@@ -164,55 +133,36 @@ export const projects: Project[] = [
     categorySlug: 'ui-ux-design',
     title: 'IT Explorer',
     paragraphs: [
-      'I was responsible for hosting multiple employee engagement events every year, including organizing the event, creating signage, event materials, and execution. Events ranged from 50 to 400 people, and included participants from employees to executive leadership.',
-    ],
-    bulletList: [
-      'BBQ cookouts',
-      'Executive round table discussions',
-      'Town hall meetings',
-      'Holiday parties',
-      'Off-site baseball game outing',
+      'As part of the IT Explorer project, I helped shape the user interface by translating complex information into a clean, accessible digital experience. Through thoughtful layout design, navigation improvements, and visual consistency, the pages became easier to use while maintaining alignment with the broader IT brand and user needs.',
     ],
     image: { src: '/images/projects/ui-ux/ui-ux-one.png', alt: 'Corteva IT Explorer onboarding UI mockup' },
-    contentNotice: REUSED_EVENTS_COPY_NOTICE,
-  },
-  {
-    id: 'profile-page',
-    categorySlug: 'ui-ux-design',
-    title: 'Profile Page',
-    paragraphs: [
-      'I was responsible for hosting multiple employee engagement events every year, including organizing the event, creating signage, event materials, and execution. Events ranged from 50 to 400 people, and included participants from employees to executive leadership.',
-    ],
-    bulletList: [
-      'BBQ cookouts',
-      'Executive round table discussions',
-      'Town hall meetings',
-      'Holiday parties',
-      'Off-site baseball game outing',
-    ],
-    image: { src: '/images/projects/ui-ux/ui-ux-two.png', alt: 'Corteva Connect employee profile page UI mockup' },
-    contentNotice: REUSED_EVENTS_COPY_NOTICE,
   },
   {
     id: 'power-bi-report-templates',
     categorySlug: 'ui-ux-design',
     title: 'Power BI Report Templates',
     paragraphs: [
-      'I developed a wide range of internal communications, including monthly newsletters, leadership updates, and project-specific campaigns. Using Adobe Illustrator, Photoshop, SendGrid, and Workshop, I created visually engaging email experiences that aligned with organizational goals and improved message clarity.',
-      'My communications consistently achieved higher engagement rates than standard pre-formatted templates, demonstrating the value of custom design, thoughtful content hierarchy, and audience-focused messaging.',
+      'Before this project, Power BI dashboards varied widely across teams, making it difficult to maintain consistency and adhere to brand guidelines. I created a suite of standardized templates that unified the reporting experience, improved usability, and made branded dashboard creation more efficient.', 
+      'In addition, I introduced accessibility guidelines for charts and data visualizations, creating standards that improved usability and consistency across reports.',    
+    ],
+    image: { src: '/images/projects/ui-ux/ui-ux-two.png', alt: 'Corteva Connect employee profile page UI mockup' },
+  },
+  {
+    id: 'profile-page',
+    categorySlug: 'ui-ux-design',
+    title: 'Profile Page',
+    paragraphs: [
+      'I helped refine the UI for the Corteva Connect profile pages, improving usability through enhanced layouts and content organization. In addition, I created custom dynamic banner imagery that changed based on whether it was day or night in a user\'s location, adding a personalized touch while highlighting the platform\'s global reach.',
     ],
     image: { src: '/images/projects/ui-ux/ui-ux-three.png', alt: 'Branded Power BI report template mockups' },
-    contentNotice: REUSED_GENERIC_COMMS_COPY_NOTICE,
   },
   {
     id: 'app-icons',
     categorySlug: 'ui-ux-design',
     title: 'App Icons',
     paragraphs: [
-      'I developed a wide range of internal communications, including monthly newsletters, leadership updates, and project-specific campaigns. Using Adobe Illustrator, Photoshop, SendGrid, and Workshop, I created visually engaging email experiences that aligned with organizational goals and improved message clarity.',
-      'My communications consistently achieved higher engagement rates than standard pre-formatted templates, demonstrating the value of custom design, thoughtful content hierarchy, and audience-focused messaging.',
+      'As the number of internally developed applications grew, maintaining a consistent visual identity became increasingly challenging. I established a comprehensive set of app icon standards that defined visual style, color usage, sizing, and branding requirements, creating a unified experience across the organization\'s digital ecosystem.',
     ],
     image: { src: '/images/projects/ui-ux/ui-ux-four.png', alt: 'Set of eight branded app icons' },
-    contentNotice: REUSED_GENERIC_COMMS_COPY_NOTICE,
   },
 ]
