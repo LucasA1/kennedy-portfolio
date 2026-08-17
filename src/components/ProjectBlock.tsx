@@ -21,6 +21,7 @@ export default function ProjectBlock({ project, reverse = false, first = false }
         align="start"
         order={{ base: 1, md: reverse ? 2 : 1 }}
         paddingLeft={{ base: 0, md: reverse ? 0 : 8 }}
+        marginTop={'-50%'}
       >
         <Eyebrow>Project</Eyebrow>
         <Heading
@@ -44,10 +45,10 @@ export default function ProjectBlock({ project, reverse = false, first = false }
         ))}
         {project.bulletList && (
           <Box>
-            <Text
-              textTransform="uppercase"
-              fontWeight="bold"
-              color="slate.900"
+            <Text 
+              textTransform="uppercase
+              "fontWeight="bold" 
+              color="slate.900" 
               marginBottom={1}
             >
               Events included:
