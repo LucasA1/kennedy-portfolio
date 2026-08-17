@@ -4,6 +4,8 @@ import PageHero from '../components/layout/PageHero'
 import PlaceholderImage from '../components/decorative/PlaceholderImage'
 import SkillCard from '../components/SkillCard'
 import CategoryTile from '../components/CategoryTile'
+import Eyebrow from '../components/Eyebrow'
+import PortfolioBackdrop from '../components/decorative/PortfolioBackdrop'
 import { categories, homeContent } from '../data'
 
 export default function Home() {
@@ -59,9 +61,7 @@ export default function Home() {
         >
           <VStack maxW="260px" align="start" flexShrink={0}>
             <Box>
-              <Text color="brand.400" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
-                {skills.eyebrow}
-              </Text>
+              <Eyebrow fontSize="sm">{skills.eyebrow}</Eyebrow>
               <Heading
                 as="h2"
                 size="2xl"
@@ -126,9 +126,9 @@ export default function Home() {
           </Box>
 
           <VStack align="start">
-            <Text color="slate.900" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="tight" paddingBottom={0}>
+            <Eyebrow color="slate.900" fontSize="sm" letterSpacing="tight" paddingBottom={0}>
               {about.eyebrow}
-            </Text>
+            </Eyebrow>
             <Heading as="h2" size="2xl" fontWeight="bold" color="700" letterSpacing="tight" paddingTop={0}>
               {about.heading}
             </Heading>
@@ -164,16 +164,8 @@ export default function Home() {
         paddingX={8}
         paddingTop={10}
       >
-        <Box
-          position="absolute"
-          inset={0}
-          backgroundImage="url(/images/home/home-portfolio.svg)"
-          backgroundRepeat="no-repeat"
-          backgroundPosition="center"
-          backgroundSize="85%"
-          zIndex={0}
-        />
-        <VStack 
+        <PortfolioBackdrop />
+        <VStack
           position="relative"
           zIndex={1}
           maxWidth="1400px"
@@ -183,9 +175,7 @@ export default function Home() {
           paddingBottom={12}
         >
           <Box textAlign="center" paddingBottom={8}>
-            <Text color="brand.400" fontWeight="bold" fontSize="lg" textTransform="uppercase" letterSpacing="tight">
-              {portfolioPreview.eyebrow}
-            </Text>
+            <Eyebrow letterSpacing="tight">{portfolioPreview.eyebrow}</Eyebrow>
             <Heading as="h2" size="4xl" fontWeight="bold" color="brand.700" letterSpacing="tight">
               {portfolioPreview.heading}
             </Heading>

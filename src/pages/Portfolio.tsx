@@ -1,6 +1,8 @@
-import { Box, Heading, Link, SimpleGrid, Text, VStack, useToken } from '@chakra-ui/react'
+import { Box, Heading, Link, SimpleGrid, VStack, useToken } from '@chakra-ui/react'
 import PageHero from '../components/layout/PageHero'
 import CategoryTile from '../components/CategoryTile'
+import Eyebrow from '../components/Eyebrow'
+import PortfolioBackdrop from '../components/decorative/PortfolioBackdrop'
 import { categories, homeContent, siteConfig } from '../data'
 
 export default function Portfolio() {
@@ -11,20 +13,10 @@ export default function Portfolio() {
       <PageHero bg="brand.400" headerLineColor={brand700} eyebrow="Work Highlights" title="Portfolio" showBlob minHeight="240px" />
 
       <Box as="section" position="relative" overflow="hidden" paddingY={{ base: 12, md: 16 }} paddingX={{ base: 4, md: 8 }}>
-        <Box
-          position="absolute"
-          inset={0}
-          backgroundImage="url(/images/home/home-portfolio.svg)"
-          backgroundRepeat="no-repeat"
-          backgroundPosition="center"
-          backgroundSize="85%"
-          zIndex={0}
-        />
+        <PortfolioBackdrop />
         <VStack position="relative" zIndex={1} maxWidth="1400px" marginX="auto" align="center" gap={8}>
           <Box textAlign="center">
-            <Text color="brand.400" fontWeight="bold" fontSize="lg" textTransform="uppercase" letterSpacing="tight">
-              Projects
-            </Text>
+            <Eyebrow letterSpacing="tight">Projects</Eyebrow>
             <Heading as="h1" size="3xl" fontWeight="bold" letterSpacing="tight" color="brand.700">
               Areas of Expertise
             </Heading>

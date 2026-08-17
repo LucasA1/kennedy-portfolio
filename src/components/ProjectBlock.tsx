@@ -1,6 +1,7 @@
 import { Box, Flex, Grid, Heading, Image, List, Text, VStack } from '@chakra-ui/react'
 import type { Project } from '../data/types'
 import PlaceholderImage from './decorative/PlaceholderImage'
+import Eyebrow from './Eyebrow'
 
 interface ProjectBlockProps {
   project: Project
@@ -21,15 +22,7 @@ export default function ProjectBlock({ project, reverse = false, first = false }
         order={{ base: 1, md: reverse ? 2 : 1 }}
         paddingLeft={{ base: 0, md: reverse ? 0 : 8 }}
       >
-        <Text
-          color="brand.400"
-          fontWeight="bold"
-          fontSize="lg"
-          textTransform="uppercase"
-          letterSpacing="wide"
-        >
-          Project
-        </Text>
+        <Eyebrow>Project</Eyebrow>
         <Heading
           as="h1"
           fontWeight="bold"
@@ -51,10 +44,10 @@ export default function ProjectBlock({ project, reverse = false, first = false }
         ))}
         {project.bulletList && (
           <Box>
-            <Text 
-              textTransform="uppercase
-              "fontWeight="bold" 
-              color="slate.900" 
+            <Text
+              textTransform="uppercase"
+              fontWeight="bold"
+              color="slate.900"
               marginBottom={1}
             >
               Events included:
@@ -76,7 +69,7 @@ export default function ProjectBlock({ project, reverse = false, first = false }
       <Box
         position="relative"
         order={{ base: 2, md: reverse ? 1 : 2 }}
-        width="80%"
+        width="92%"
         marginLeft={{ base: 'auto', md: reverse ? 8 : 'auto' }}
         marginRight="auto"
         marginBottom={10}
@@ -89,7 +82,7 @@ export default function ProjectBlock({ project, reverse = false, first = false }
             pointerEvents="none"
             position="absolute"
             right="-12%"
-            width="90%"
+            width="85%"
             zIndex={0}
           />
         )}
@@ -111,6 +104,7 @@ export default function ProjectBlock({ project, reverse = false, first = false }
           gap={4}
           gridColumn={{ md: '1 / -1' }}
           order={3}
+          marginTop={{ base: 4, md: 8 }}
         >
           {project.gallery.map((image) => (
             <PlaceholderImage

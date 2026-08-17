@@ -2,6 +2,7 @@ import { Box, Grid, Heading, Link, Text, VStack, useToken } from '@chakra-ui/rea
 import PageHero from '../components/layout/PageHero'
 import ContactList from '../components/ContactList'
 import ResumePdfPreview from '../components/ResumePdfPreview'
+import Eyebrow from '../components/Eyebrow'
 import { siteConfig } from '../data'
 
 export default function Contact() {
@@ -27,9 +28,7 @@ export default function Contact() {
         >
           <VStack align="start" gap={6}>
             <Box>
-              <Text color="brand.400" fontWeight="bold" fontSize="lg" textTransform="uppercase" letterSpacing="wide">
-                Details
-              </Text>
+              <Eyebrow>Details</Eyebrow>
               <Heading as="h2" size="3xl" color="brand.700" fontWeight="bold">
                 Let's Chat
               </Heading>
@@ -42,16 +41,9 @@ export default function Contact() {
             <ContactList color="brand.700" />
 
             <Box>
-              <Text
-                color="coral.400"
-                fontWeight="bold"
-                fontSize="md"
-                textTransform="uppercase"
-                letterSpacing="wide"
-                marginBottom={2}
-              >
+              <Eyebrow color="coral.400" fontSize="md" marginBottom={2}>
                 Download
-              </Text>
+              </Eyebrow>
               <VStack align="start" gap={1}>
                 <Link
                   href={siteConfig.contact.resumeUrl}

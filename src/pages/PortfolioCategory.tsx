@@ -3,6 +3,7 @@ import { Box, Heading, SimpleGrid, Text, VStack, useToken } from '@chakra-ui/rea
 import PageHero from '../components/layout/PageHero'
 import ProjectBlock from '../components/ProjectBlock'
 import PlaceholderImage from '../components/decorative/PlaceholderImage'
+import Eyebrow from '../components/Eyebrow'
 import { categories, miscGalleryItems, projects } from '../data'
 
 export default function PortfolioCategory() {
@@ -47,9 +48,7 @@ export default function PortfolioCategory() {
           {isMiscellaneous ? (
             <VStack align="center" gap={8} paddingTop={4}>
               <Box textAlign="center">
-                <Text color="brand.400" fontWeight="bold" fontSize="sm" textTransform="uppercase" letterSpacing="wide">
-                  Projects
-                </Text>
+                <Eyebrow fontSize="sm">Projects</Eyebrow>
                 <Heading as="h2" size="xl" color="brand.700">
                   A little bit of everything
                 </Heading>
