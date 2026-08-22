@@ -1,4 +1,5 @@
-import { HStack, Link, Text, VStack } from '@chakra-ui/react'
+import { HStack, Link, Stack, Text } from '@chakra-ui/react'
+import type { StackProps } from '@chakra-ui/react'
 import { FaRegEnvelope, FaAt, FaPhone } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 import { siteConfig } from '../data'
@@ -12,9 +13,16 @@ interface ContactRow {
 interface ContactListProps {
   color?: string
   includePhone?: boolean
+  direction?: StackProps['direction']
+  align?: StackProps['align']
 }
 
-export default function ContactList({ color = 'inherit', includePhone = true }: ContactListProps) {
+export default function ContactList({
+  color = 'inherit',
+  includePhone = true,
+  direction = 'column',
+  align = 'start',
+}: ContactListProps) {
   const { contact } = siteConfig
 
   const rows: ContactRow[] = [
@@ -24,7 +32,7 @@ export default function ContactList({ color = 'inherit', includePhone = true }: 
   ]
 
   return (
-    <VStack align="start">
+    <Stack direction={direction} align={align} gap={4}>
       {rows.map((row) => (
         <HStack key={row.label} gap={2} color={color}>
           <row.icon aria-hidden="true" />
@@ -37,6 +45,6 @@ export default function ContactList({ color = 'inherit', includePhone = true }: 
           )}
         </HStack>
       ))}
-    </VStack>
+    </Stack>
   )
 }

@@ -53,7 +53,7 @@ const config = defineConfig({
                 },
                 coral: {
                 50: {value: '#fff5f3'},
-                100: {value: '#ffbdb7'},
+                100: {value: '#ffd4d4'},
                 300: {value: '#fea99f'},
                 400: {value: '#fc847e'},
                 500: {value: '#f2695f'},

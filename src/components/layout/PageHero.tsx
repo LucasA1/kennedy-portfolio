@@ -38,11 +38,12 @@ export default function PageHero({
         position="absolute"
         top={0}
         left={0}
-        width="20%"
+        width={{ base: '260px', md: '20%' }}
         zIndex={0}
       />
       {showBlob && (
         <Image
+          display={{ base: 'none', md: 'block' }}
           src={bottomRightBlobSrc}
           alt=""
           aria-hidden="true"
@@ -66,7 +67,7 @@ export default function PageHero({
         marginX="auto"
         paddingX={{ base: 4, md: 8 }}
         paddingTop={{ base: 8, md: 12 }}
-        paddingBottom={{ base: 10, md: 16 }}
+        paddingBottom={{ base: 4, md: 16 }}
       >
         <VStack align="start" gap={2} flex="1">
           <Heading 
@@ -93,15 +94,17 @@ export default function PageHero({
         {image && (
           <Box
             aria-hidden="true"
+            display={{ base: 'none', md: 'block' }}
             flexShrink={0}
-            width={{ base: '100%', md: '440px' }}
-            height={{ base: '240px', md: 'auto' }}
+            width="440px"
+            height="auto"
             alignSelf="stretch"
           />
         )}
       </Flex>
       {image && (
         <Box
+          display={{ base: 'none', md: 'block' }}
           position="absolute"
           bottom={0}
           left={0}
@@ -113,7 +116,7 @@ export default function PageHero({
           pointerEvents="none"
           zIndex={0}
         >
-          <Box position="absolute" bottom={0} right={{ base: 4, md: 0 }} width={{ base: '280px', md: '440px' }}>
+          <Box position="absolute" bottom={0} right={0} width="440px">
             <Image
               src="/images/home/hero-behind-image.svg"
               alt=""

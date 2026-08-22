@@ -1,5 +1,6 @@
-import { Box, Button, HStack, Heading, Image, List, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, HStack, Heading, IconButton, Image, List, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
+import { FaPhone } from 'react-icons/fa6'
 import PageHero from '../components/layout/PageHero'
 import PlaceholderImage from '../components/decorative/PlaceholderImage'
 import SkillCard from '../components/SkillCard'
@@ -28,20 +29,51 @@ export default function Home() {
           ))}
           {hero.ctas && (
             <HStack gap={4} paddingTop={2}>
-              {hero.ctas.map((cta, index) => (
-                <Button
-                  key={cta.to}
-                  asChild
-                  variant={index === 0 ? 'solid' : 'outline'}
-                  bg={index === 0 ? 'white' : undefined}
-                  color={index === 0 ? 'brand.700' : 'white'}
-                  _hover={index === 0 ? { bg: 'whiteAlpha.900'} : {color: 'slate.900' }}
-                  borderRadius="full"
-                  paddingX={6}
-                >
-                  <RouterLink to={cta.to}>{cta.label}</RouterLink>
-                </Button>
-              ))}
+              {hero.ctas.map((cta, index) => {
+                if (index === 1) {
+                  return (
+                    <Box key={cta.to}>
+                      <IconButton
+                        asChild
+                        aria-label={cta.label}
+                        variant="outline"
+                        color="white"
+                        borderRadius="full"
+                        display={{ base: 'inline-flex', md: 'none' }}
+                      >
+                        <RouterLink to={cta.to}>
+                          <FaPhone />
+                        </RouterLink>
+                      </IconButton>
+                      <Button
+                        asChild
+                        variant="outline"
+                        color="white"
+                        _hover={{ color: 'slate.900' }}
+                        borderRadius="full"
+                        paddingX={6}
+                        display={{ base: 'none', md: 'inline-flex' }}
+                      >
+                        <RouterLink to={cta.to}>{cta.label}</RouterLink>
+                      </Button>
+                    </Box>
+                  )
+                }
+                return (
+                  <Button
+                    key={cta.to}
+                    asChild
+                    variant="solid"
+                    bg="white"
+                    color="brand.700"
+                    _hover={{ bg: 'whiteAlpha.900' }}
+                    borderRadius="full"
+                    paddingX={6}
+                  >
+                    <RouterLink to={cta.to}>{cta.label}</RouterLink>
+                  </Button>
+                )
+              })}
             </HStack>
           )}
         </VStack>
@@ -85,20 +117,22 @@ export default function Home() {
         </HStack>
       </Box>
 
-      <Box 
-        as="section" 
-        bg="coral.100" 
-        paddingTop={12} 
+      <Box
+        as="section"
+        bg="coral.100"
+        paddingTop={{ base: 6, md: 12 }}
+        paddingBottom={{ base: 12, md: 0 }}
         paddingX={8}
       >
         <SimpleGrid
-          columns={2}
+          columns={{ base: 1, md: 2 }}
           gap={8}
           maxWidth="1400px"
           marginX="auto"
           alignItems="stretch"
         >
           <Box
+            display={{ base: 'none', md: 'block' }}
             position="relative"
             overflow="hidden"
             width="100%"
@@ -116,23 +150,23 @@ export default function Home() {
               zIndex={0}
             />
             <Box width="60%" height="20%" position="relative" zIndex={1} left={20}>
-              <PlaceholderImage 
-                src={about.image.src} 
+              <PlaceholderImage
+                src={about.image.src}
                 alt={about.image.alt}
-                aspectRatio={.74} 
-                borderRadius="lg" 
+                aspectRatio={.74}
+                borderRadius="lg"
               />
             </Box>
           </Box>
 
-          <VStack align="start">
+          <VStack align={{ base: 'center', md: 'start' }}>
             <Eyebrow color="slate.900" fontSize="sm" letterSpacing="tight" paddingBottom={0}>
               {about.eyebrow}
             </Eyebrow>
-            <Heading as="h2" size="2xl" fontWeight="bold" color="700" letterSpacing="tight" paddingTop={0}>
+            <Heading as="h2" size="2xl" fontWeight="bold" color="brand.700" letterSpacing="tight" paddingTop={0} textAlign={{ base: 'center', md: 'left' }}>
               {about.heading}
             </Heading>
-            <HStack gap={6} flexWrap="wrap">
+            <HStack gap={6} flexWrap="wrap" justify={{ base: 'center', md: 'start' }}>
               {about.meta.map((item) => (
                 <HStack key={item.label} gap={2} color="coral.400" >
                   <item.icon aria-hidden="true" />
@@ -148,7 +182,7 @@ export default function Home() {
               ))}
             </HStack>
             {about.paragraphs.map((paragraph) => (
-              <Text key={paragraph} color="slate.900">
+              <Text key={paragraph} color="slate.900" textAlign="left" alignSelf="stretch">
                 {paragraph}
               </Text>
             ))}
@@ -156,23 +190,22 @@ export default function Home() {
         </SimpleGrid>
       </Box>
 
-      <Box 
-        as="section" 
-        position="relative" 
-        overflow="hidden" 
-        paddingY={16} 
-        paddingX={8}
+      <Box
+        as="section"
+        position="relative"
+        overflow="hidden"
         paddingTop={10}
+        paddingBottom={{ base: 10, md: 16 }}
+        paddingX={8}
       >
         <PortfolioBackdrop />
         <VStack
           position="relative"
           zIndex={1}
           maxWidth="1400px"
-          marginX="auto" 
-          align="center" 
+          marginX="auto"
+          align="center"
           gap={8}
-          paddingBottom={12}
         >
           <Box textAlign="center" paddingBottom={8}>
             <Eyebrow letterSpacing="tight">{portfolioPreview.eyebrow}</Eyebrow>

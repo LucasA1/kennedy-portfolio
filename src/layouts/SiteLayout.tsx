@@ -4,8 +4,8 @@ import Footer from '../components/layout/Footer'
 
 export default function SiteLayout() {
   return (
-    <Box>
-      <Box as="main">
+    <Box display="flex" flexDirection="column" minHeight="100dvh">
+      <Box as="main" flex="1">
         <Outlet />
       </Box>
       <Footer />
