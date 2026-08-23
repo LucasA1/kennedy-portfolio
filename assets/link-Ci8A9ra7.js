@@ -1,1 +1,0 @@
-import{D as e}from"./siteConfig-DyhFAWYJ.js";var{withContext:t,PropsProvider:n}=e({key:`link`}),r=t(`a`);export{r as t};

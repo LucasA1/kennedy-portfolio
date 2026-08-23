@@ -1,0 +1,1 @@
+import{N as e}from"./iconBase-CvStA7IF.js";var{withContext:t,PropsProvider:n}=e({key:`link`}),r=t(`a`);export{r as t};

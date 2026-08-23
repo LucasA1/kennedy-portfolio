@@ -1,1 +1,0 @@
-import{D as e}from"./siteConfig-DyhFAWYJ.js";var{withContext:t,PropsProvider:n}=e({key:`spinner`}),r=t(`span`);export{r as t};

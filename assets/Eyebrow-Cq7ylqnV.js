@@ -1,1 +1,0 @@
-import{E as e,K as t}from"./siteConfig-DyhFAWYJ.js";var n=t();function r({color:t=`brand.400`,fontSize:r=`lg`,letterSpacing:i=`wide`,...a}){return(0,n.jsx)(e,{color:t,fontWeight:`bold`,fontSize:r,textTransform:`uppercase`,letterSpacing:i,...a})}export{r as t};
