@@ -3,10 +3,12 @@ import { NavLink as RouterNavLink } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa6'
 import { siteConfig } from '../../data'
 
-export default function Header({ lineColor = '#ff9a7f' }: { lineColor?: string }) {
+const DRAWER_LINE_COLOR = '#ff9a7f'
+
+function makeActiveLinkStyles(lineColor: string) {
   const encodedLineColor = lineColor.replace('#', '%23')
 
-  const activeLinkStyles = {
+  return {
     display: 'inline-block',
     position: 'relative',
     '&.active': { opacity: 1 },
@@ -22,6 +24,11 @@ export default function Header({ lineColor = '#ff9a7f' }: { lineColor?: string }
       backgroundSize: '12px 6px',
     },
   } as const
+}
+
+export default function Header({ lineColor = '#ff9a7f' }: { lineColor?: string }) {
+  const activeLinkStyles = makeActiveLinkStyles(lineColor)
+  const drawerActiveLinkStyles = makeActiveLinkStyles(DRAWER_LINE_COLOR)
 
   return (
     <Box as="header" position="relative" zIndex={2} paddingY={4} paddingX={{ base: 4, md: 8 }}>
@@ -73,7 +80,7 @@ export default function Header({ lineColor = '#ff9a7f' }: { lineColor?: string }
             <Portal>
               <Drawer.Backdrop />
               <Drawer.Positioner>
-                <Drawer.Content bg="brand.700">
+                <Drawer.Content bg="brand.700" boxShadow="-16px 0 32px -12px rgba(0, 0, 0, 0.45)">
                   <Box paddingX={6} paddingY={4} display="flex" justifyContent="flex-end">
                     <Drawer.CloseTrigger asChild>
                       <CloseButton color="white" _hover={{ bg: 'whiteAlpha.200' }} />
@@ -92,7 +99,7 @@ export default function Header({ lineColor = '#ff9a7f' }: { lineColor?: string }
                             textTransform="uppercase"
                             opacity={0.85}
                             _hover={{ opacity: 1 }}
-                            css={activeLinkStyles}
+                            css={drawerActiveLinkStyles}
                           >
                             <RouterNavLink to={link.to} end={link.to === '/'}>
                               {link.label}

@@ -64,7 +64,7 @@ export default function Footer() {
           templateColumns={{ base: '1fr', md: 'repeat(2, max-content)' }}
           justifyItems={{ base: 'center', md: 'start' }}
           alignItems={{ base: 'start', md: 'center' }}
-          gap={8}
+          gap={{ base: 4, md: 8 }}
         >
           <VStack align={{ base: 'center', md: 'start' }}>
             <Text fontWeight="bold" fontSize="2xl" color="brand.700">

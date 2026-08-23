@@ -1,4 +1,4 @@
-import { Box, Grid, Heading, Link, Text, VStack, useToken } from '@chakra-ui/react'
+import { Box, Flex, Grid, Heading, Link, Text, VStack, useToken } from '@chakra-ui/react'
 import PageHero from '../components/layout/PageHero'
 import ContactList from '../components/ContactList'
 import ResumePdfPreview from '../components/ResumePdfPreview'
@@ -27,7 +27,7 @@ export default function Contact() {
           marginX="auto"
         >
           <VStack align="start" gap={6}>
-            <Box>
+            <Box width="100%" textAlign={{ base: 'center', md: 'left' }}>
               <Eyebrow>Details</Eyebrow>
               <Heading as="h2" size="3xl" color="brand.700" fontWeight="bold">
                 Let's Chat
@@ -38,35 +38,43 @@ export default function Contact() {
               contact me in these various ways. If you're looking to sell me a car warranty, please disregard this
               information.
             </Text>
-            <ContactList color="brand.700" />
+            <Flex
+              direction={{ base: 'row', md: 'column' }}
+              align="start"
+              wrap="wrap"
+              gap={{ base: 8, md: 6 }}
+              width="100%"
+            >
+              <ContactList color="brand.700" />
 
-            <Box>
-              <Eyebrow color="coral.400" fontSize="md" marginBottom={2}>
-                Download
-              </Eyebrow>
-              <VStack align="start" gap={1}>
-                <Link
-                  href={siteConfig.contact.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="slate.900"
-                  fontWeight="medium"
-                  textDecoration="underline"
-                >
-                  Resumé
-                </Link>
-                <Link
-                  href={siteConfig.contact.portfolioPdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color="slate.900"
-                  fontWeight="medium"
-                  textDecoration="underline"
-                >
-                  Portfolio PDF
-                </Link>
-              </VStack>
-            </Box>
+              <Box>
+                <Eyebrow color="coral.400" fontSize="md" marginBottom={2}>
+                  Download
+                </Eyebrow>
+                <VStack align="start" gap={1}>
+                  <Link
+                    href={siteConfig.contact.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="slate.900"
+                    fontWeight="medium"
+                    textDecoration="underline"
+                  >
+                    Resumé
+                  </Link>
+                  <Link
+                    href={siteConfig.contact.portfolioPdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="slate.900"
+                    fontWeight="medium"
+                    textDecoration="underline"
+                  >
+                    Portfolio PDF
+                  </Link>
+                </VStack>
+              </Box>
+            </Flex>
           </VStack>
 
           <ResumePdfPreview fileUrl={siteConfig.contact.resumeUrl} />

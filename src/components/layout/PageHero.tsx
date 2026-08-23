@@ -29,7 +29,13 @@ export default function PageHero({
   headerLineColor,
 }: PageHeroProps) {
   return (
-    <Box as="section" position="relative" bg={bg} overflow="hidden" minHeight={minHeight}>
+    <Box
+      as="section"
+      position="relative"
+      bg={bg}
+      overflow="hidden"
+      minHeight={{ base: 'auto', md: minHeight }}
+    >
       <Image
         src={showBlob ? '/images/svgs/portfolio-header-top-left.svg' : '/images/home/hero-top-left.svg'}
         alt=""
@@ -37,27 +43,26 @@ export default function PageHero({
         pointerEvents="none"
         position="absolute"
         top={0}
-        left={0}
-        width={{ base: '260px', md: '20%' }}
+        left={{ base: '-156px', md: 0 }}
+        width={{ base: '312px', md: '20%' }}
         zIndex={0}
       />
       {showBlob && (
         <Image
-          display={{ base: 'none', md: 'block' }}
           src={bottomRightBlobSrc}
           alt=""
           aria-hidden="true"
           pointerEvents="none"
           position="absolute"
           bottom={0}
-          right={0}
-          width="20%"
+          right={{ base: '-84px', md: 0 }}
+          width={{ base: '168px', md: '20%' }}
           zIndex={0}
         />
       )}
       <Header lineColor={headerLineColor} />
       <Flex
-        align="center"
+        align={{ base: 'stretch', md: 'center' }}
         justify="space-between"
         gap={8}
         direction={{ base: 'column', md: 'row' }}
@@ -66,8 +71,8 @@ export default function PageHero({
         maxWidth="1400px"
         marginX="auto"
         paddingX={{ base: 4, md: 8 }}
-        paddingTop={{ base: 8, md: 12 }}
-        paddingBottom={{ base: 4, md: 16 }}
+        paddingTop={{ base: 16, md: 12 }}
+        paddingBottom={{ base: 10, md: 16 }}
       >
         <VStack align="start" gap={2} flex="1">
           <Heading 
@@ -84,7 +89,7 @@ export default function PageHero({
             fontSize="sm"
             letterSpacing="wide"
             textTransform="uppercase"
-            paddingTop={4}
+            paddingTop={1}
             paddingBottom={2}
           >
             {eyebrow}

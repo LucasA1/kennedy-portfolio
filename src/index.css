@@ -8,6 +8,18 @@ body {
   margin: 0;
 }
 
+/*
+ * Reserve the scrollbar gutter permanently. Chakra's scroll lock (used when the
+ * mobile drawer opens) otherwise adds `padding-right: innerWidth - clientWidth`
+ * to <body> to compensate for the hidden scrollbar. Because the reset above puts
+ * <body> in border-box, an oversized measurement collapses body's content box to
+ * 0 and takes #root — and the whole page — down with it. A stable gutter makes
+ * the lock skip that compensation entirely.
+ */
+html {
+  scrollbar-gutter: stable;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -17,3 +29,4 @@ html {
     scroll-behavior: auto;
   }
 }
+

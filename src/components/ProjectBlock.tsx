@@ -21,7 +21,7 @@ export default function ProjectBlock({ project, reverse = false, first = false }
         align="start"
         order={{ base: 1, md: reverse ? 2 : 1 }}
         paddingLeft={{ base: 0, md: reverse ? 0 : 8 }}
-        marginTop={'-50%'}
+        marginTop={{ base: 0, md: '-50%' }}
       >
         <Eyebrow>Project</Eyebrow>
         <Heading
@@ -102,20 +102,60 @@ export default function ProjectBlock({ project, reverse = false, first = false }
       {project.gallery && (
         <Flex
           wrap="wrap"
-          gap={4}
+          spaceY={-5}
+          columnGap={4}
           gridColumn={{ md: '1 / -1' }}
           order={3}
           marginTop={{ base: 4, md: 8 }}
         >
-          {project.gallery.map((image) => (
-            <PlaceholderImage
-              key={image.src}
-              src={image.src}
-              alt={image.alt}
-              aspectRatio={image.aspectRatio}
-              justified
-            />
-          ))}
+          {project.gallery.length === 3 ? (
+            <>
+              <PlaceholderImage
+                key={project.gallery[1].src}
+                src={project.gallery[1].src}
+                alt={project.gallery[1].alt}
+                aspectRatio={project.gallery[1].aspectRatio}
+                justified
+                mobileBasis="100%"
+                order={{ base: 0, md: 1 }}
+              />
+              <Box
+                display={{ base: 'flex', md: 'contents' }}
+                spaceX={-5}
+                marginX={{ base: 0 }}
+                order={{ base: 1 }}
+              >
+                <PlaceholderImage
+                  key={project.gallery[0].src}
+                  src={project.gallery[0].src}
+                  alt={project.gallery[0].alt}
+                  aspectRatio={project.gallery[0].aspectRatio}
+                  justified
+                  mobileBasis="52.5%"
+                  order={{ base: 0, md: 0 }}
+                />
+                <PlaceholderImage
+                  key={project.gallery[2].src}
+                  src={project.gallery[2].src}
+                  alt={project.gallery[2].alt}
+                  aspectRatio={project.gallery[2].aspectRatio}
+                  justified
+                  mobileBasis="52.5%"
+                  order={{ base: 1, md: 2 }}
+                />
+              </Box>
+            </>
+          ) : (
+            project.gallery.map((image) => (
+              <PlaceholderImage
+                key={image.src}
+                src={image.src}
+                alt={image.alt}
+                aspectRatio={image.aspectRatio}
+                justified
+              />
+            ))
+          )}
         </Flex>
       )}
     </Grid>

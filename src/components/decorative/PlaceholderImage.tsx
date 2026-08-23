@@ -26,6 +26,10 @@ interface PlaceholderImageProps {
   justified?: boolean
   /** Shared row height used when `justified` is set. */
   rowHeight?: BoxProps['height']
+  /** Flex-basis used at the `base` breakpoint when `justified` is set, e.g. to stack images or pair them up on mobile. Defaults to '100%' (one per row). */
+  mobileBasis?: string
+  /** CSS `order` override, keyed by breakpoint, applied when `justified` is set. */
+  order?: BoxProps['order']
 }
 
 export default function PlaceholderImage({
@@ -36,6 +40,8 @@ export default function PlaceholderImage({
   showLabel = true,
   justified,
   rowHeight,
+  mobileBasis = '100%',
+  order,
 }: PlaceholderImageProps) {
   const [failed, setFailed] = useState(!src)
   const [measuredRatio, setMeasuredRatio] = useState(aspectRatio)
@@ -62,9 +68,11 @@ export default function PlaceholderImage({
     const ratio = measuredRatio ?? 1.5
     return (
       <Box
-        flex={`${ratio} 1 0px`}
+        flex={{ base: `0 0 ${mobileBasis}`, md: `${ratio} 1 0px` }}
         minWidth={0}
-        height={rowHeight}
+        height={{ base: 'auto', md: rowHeight }}
+        aspectRatio={{ base: ratio, md: undefined }}
+        order={order}
         borderRadius={borderRadius}
         overflow="hidden"
       >
@@ -76,8 +84,8 @@ export default function PlaceholderImage({
             alt={alt}
             loading="lazy"
             width="100%"
-            height="100%"
-            objectFit="contain"
+            height={{ base: 'auto', md: '100%' }}
+            objectFit={{ base: 'cover', md: 'contain' }}
             onLoad={(event) => {
               const { naturalWidth, naturalHeight } = event.currentTarget
               if (naturalWidth && naturalHeight) setMeasuredRatio(naturalWidth / naturalHeight)
