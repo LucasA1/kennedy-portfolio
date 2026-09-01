@@ -24,5 +24,7 @@ dist-ssr
 *.sln
 *.sw?
 
+
+.claude/*
 CLAUDE.md
 CONTENT-TODO.md
