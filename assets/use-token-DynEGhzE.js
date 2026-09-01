@@ -1,0 +1,1 @@
+import{r as e}from"./rolldown-runtime-hePW80VL.js";import{W as t,tt as n}from"./iconBase-DQLe4qYO.js";var r=e(n(),1);function i(e,n){let i=t();return(0,r.useMemo)(()=>(Array.isArray(n)?n:[n]).map(t=>i.token(`${e}.${t}`,t)),[i,e,n])}export{i as t};

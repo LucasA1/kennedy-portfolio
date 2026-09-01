@@ -1,0 +1,1 @@
+import{P as e}from"./iconBase-DQLe4qYO.js";var{withContext:t,PropsProvider:n}=e({key:`link`}),r=t(`a`);export{r as t};

@@ -1,0 +1,1 @@
+import{$ as e,N as t}from"./iconBase-DQLe4qYO.js";var n=e();function r({color:e=`brand.400`,fontSize:r=`lg`,letterSpacing:i=`wide`,...a}){return(0,n.jsx)(t,{color:e,fontWeight:`bold`,fontSize:r,textTransform:`uppercase`,letterSpacing:i,...a})}export{r as t};
