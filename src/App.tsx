@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Center, Spinner } from '@chakra-ui/react'
 import SiteLayout from './layouts/SiteLayout'
+import ScrollToTop from './components/ScrollToTop'
 
 const Home = lazy(() => import('./pages/Home'))
 const Portfolio = lazy(() => import('./pages/Portfolio'))
@@ -11,7 +12,9 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 
 function App() {
   return (
-    <Suspense
+    <>
+      <ScrollToTop />
+      <Suspense
       fallback={
         <Center minHeight="100svh">
           <Spinner size="xl" color="brand.700" />
@@ -27,7 +30,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </Suspense>
+      </Suspense>
+    </>
   )
 }
 

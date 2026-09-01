@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import { Box, Button, HStack, Heading, IconButton, Image, List, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
-import { FaPhone } from 'react-icons/fa6'
+import { FaPhone, FaXmark } from 'react-icons/fa6'
 import PageHero from '../components/layout/PageHero'
 import PlaceholderImage from '../components/decorative/PlaceholderImage'
 import SkillCard from '../components/SkillCard'
@@ -11,6 +12,7 @@ import { categories, homeContent } from '../data'
 
 export default function Home() {
   const { hero, skills, about, portfolioPreview } = homeContent
+  const [expandedSkillIndex, setExpandedSkillIndex] = useState<number | null>(null)
 
   return (
     <>
@@ -84,6 +86,7 @@ export default function Home() {
         paddingY={16}
       >
         <HStack
+          display={{ base: 'none', md: 'flex' }}
           align="center"
           justify="start"
           gap={6}
@@ -115,6 +118,81 @@ export default function Home() {
             <SkillCard key={card.title} {...card} />
           ))}
         </HStack>
+
+        <VStack
+          display={{ base: 'flex', md: 'none' }}
+          align="stretch"
+          gap={6}
+          maxWidth="1400px"
+          marginX="auto"
+          paddingX={4}
+        >
+          <Box>
+            <Eyebrow fontSize="sm" textAlign="center">{skills.eyebrow}</Eyebrow>
+            <Heading
+              as="h2"
+              size="2xl"
+              fontWeight="bold"
+              letterSpacing="tight"
+              color="brand.700"
+              paddingBottom={4}
+              textAlign="center"
+            >
+              {skills.heading}
+            </Heading>
+          </Box>
+
+          <SimpleGrid columns={2} gap={4} alignItems="start">
+            <List.Root color="black" paddingLeft={5}>
+              {skills.bullets.map((bullet) => (
+                <List.Item key={bullet}>{bullet}</List.Item>
+              ))}
+            </List.Root>
+
+            {expandedSkillIndex === null ? (
+              <SimpleGrid columns={2} gap={3}>
+                {skills.cards.map((card, index) => (
+                  <VStack
+                    key={card.title}
+                    as="button"
+                    onClick={() => setExpandedSkillIndex(index)}
+                    bg="white"
+                    borderRadius="sm"
+                    boxShadow="lg"
+                    justify="center"
+                    aspectRatio={1}
+                    aria-label={card.title}
+                  >
+                    <Box color="brand.700" fontSize="3xl">
+                      <card.icon aria-hidden="true" />
+                    </Box>
+                  </VStack>
+                ))}
+              </SimpleGrid>
+            ) : (
+              <Box position="relative" flex={1}>
+                <IconButton
+                  aria-label="Close"
+                  onClick={() => setExpandedSkillIndex(null)}
+                  position="absolute"
+                  top={2}
+                  right={2}
+                  variant="ghost"
+                  size="sm"
+                  zIndex={1}
+                >
+                  <FaXmark />
+                </IconButton>
+                <SkillCard
+                  {...skills.cards[expandedSkillIndex]}
+                  width="100%"
+                  height="auto"
+                  minHeight="250px"
+                />
+              </Box>
+            )}
+          </SimpleGrid>
+        </VStack>
       </Box>
 
       <Box

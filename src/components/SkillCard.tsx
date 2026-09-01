@@ -1,7 +1,9 @@
-import { Box,Text, VStack } from '@chakra-ui/react'
+import { Box, Text, VStack, type StackProps } from '@chakra-ui/react'
 import type { SkillCardData } from '../data/types'
 
-export default function SkillCard({ icon: Icon, title, description }: SkillCardData) {
+type SkillCardProps = SkillCardData & Omit<StackProps, 'children'>
+
+export default function SkillCard({ icon: Icon, title, description, ...rest }: SkillCardProps) {
   return (
     <VStack
       bg="white"
@@ -12,6 +14,7 @@ export default function SkillCard({ icon: Icon, title, description }: SkillCardD
       width="240px"
       height="250px"
       flexShrink={0}
+      {...rest}
     >
       <Box color="brand.700" fontSize="4xl">
         <Icon aria-hidden="true" />

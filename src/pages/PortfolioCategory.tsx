@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { Link as RouterLink, Navigate, useParams } from 'react-router-dom'
 import { Box, Heading, SimpleGrid, Text, VStack, useToken } from '@chakra-ui/react'
 import PageHero from '../components/layout/PageHero'
 import ProjectBlock from '../components/ProjectBlock'
 import PlaceholderImage from '../components/decorative/PlaceholderImage'
+import ImageLightbox from '../components/ImageLightbox'
 import Eyebrow from '../components/Eyebrow'
 import { categories, miscGalleryItems, projects } from '../data'
 
@@ -10,6 +12,7 @@ export default function PortfolioCategory() {
   const [brand700] = useToken('colors', ['brand.700'])
   const { categorySlug } = useParams()
   const category = categories.find((item) => item.slug === categorySlug)
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null)
 
   if (!category) {
     return <Navigate to="/portfolio" replace />
@@ -55,9 +58,22 @@ export default function PortfolioCategory() {
               </Box>
               <SimpleGrid columns={{ base: 2, md: 4 }} gap={4} width="100%">
                 {miscGalleryItems.map((image) => (
-                  <PlaceholderImage key={image.src} src={image.src} alt={image.alt} aspectRatio={1} />
+                  <Box
+                    key={image.src}
+                    cursor="pointer"
+                    onClick={() => setSelectedImage({ src: image.fullSrc ?? image.src, alt: image.alt })}
+                    transition="transform 0.2s ease"
+                    _hover={{ transform: 'scale(1.03)' }}
+                  >
+                    <PlaceholderImage src={image.src} alt={image.alt} aspectRatio={1} />
+                  </Box>
                 ))}
               </SimpleGrid>
+              <ImageLightbox
+                src={selectedImage?.src ?? null}
+                alt={selectedImage?.alt ?? ''}
+                onClose={() => setSelectedImage(null)}
+              />
             </VStack>
           ) : (
             <VStack align="stretch" gap={0}>

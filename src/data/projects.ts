@@ -99,7 +99,6 @@ export const projects: Project[] = [
     id: 'bral-neidert-advisors',
     categorySlug: 'brand-stewardship',
     title: 'Bral | Neidert Advisors',
-    subtitle: 'Where Money Meets Life',
     paragraphs: [
       'The goal of this project was to revitalize an existing logo and create a cohesive brochure that reflected the brand\'s evolution. By refining the logo\'s visual elements and modernizing its overall appearance, I developed a stronger foundation for the brand. The accompanying brochure leveraged the refreshed identity to deliver information in a clear, engaging, and visually consistent format.',      
     ],

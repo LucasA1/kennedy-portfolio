@@ -84,6 +84,8 @@ export interface ProjectImage {
   src: string
   alt: string
   aspectRatio?: number
+  /** Higher-resolution version to display when the image is opened in a lightbox; defaults to `src`. */
+  fullSrc?: string
 }
 
 export interface Project {
